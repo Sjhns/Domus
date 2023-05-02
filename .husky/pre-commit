@@ -1,4 +1,4 @@
 #!/usr/bin/env sh
 . "$(dirname -- "$0")/_/husky.sh"
 
-pnpm husky add .husky/commit-msg  'npx --no -- commitlint --edit ${1}'
+pnpm husky add .husky/commit-msg  'npx --no -- commitlint --edit ${1}' && pnpm lint-staged
