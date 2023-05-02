@@ -1,7 +1,7 @@
 type ApartmentProps = {
   id: string
   address: string
-  size: number // amanho do apartamento, em metros quadrados.
+  size: number // tamanho do apartamento, em metros quadrados.
   numberOfRooms: number
   numberOfBathrooms: number
   rent: number // Valor do aluguel do apartamento
