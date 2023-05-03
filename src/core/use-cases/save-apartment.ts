@@ -1,10 +1,8 @@
-/* eslint-disable no-redeclare */
-
-export interface SaveApartment {
-  save: (apartment: SaveApartment.Params) => Promise<void>
+export interface SaveApartmentInterface {
+  insert: (apartment: SaveApartmentInterface.Params) => {}
 }
 
-namespace SaveApartment {
+namespace SaveApartmentInterface {
   export type Params = {
     id: string
     address: string
