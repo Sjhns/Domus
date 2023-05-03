@@ -9,5 +9,8 @@ type ApartmentProps = {
 }
 
 export class Apartment {
-  constructor(public props: ApartmentProps) {}
+  public props: Required<ApartmentProps>
+  constructor(props: ApartmentProps) {
+    this.props = props
+  }
 }

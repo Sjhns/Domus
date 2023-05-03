@@ -1,4 +1,4 @@
-type StudentProps = {
+export type StudentProps = {
   id: string
   name: string
   email: string

@@ -17,6 +17,6 @@ describe('Apartment test', () => {
     expect(newApartment).toBeTruthy()
     expect(newApartment).toBeDefined()
     expect(newApartment).instanceOf(Apartment)
-    expect(newApartment.props.address).toEqual(dataApartment.address)
+    expect(newApartment.props).toStrictEqual(dataApartment)
   })
 })
