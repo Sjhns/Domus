@@ -1,5 +1,4 @@
 type ApartmentProps = {
-  id: string
   address: string
   size: number // tamanho do apartamento, em metros quadrados.
   numberOfRooms: number
