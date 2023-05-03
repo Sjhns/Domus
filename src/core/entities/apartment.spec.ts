@@ -2,7 +2,7 @@ import { describe, expect, it } from 'vitest'
 import { Apartment } from './apartment'
 
 describe('Apartment test', () => {
-  it('Should create new instance of apartment', () => {
+  it('Should create new apartment', () => {
     const dataApartment = {
       id: '1330SS!2',
       size: 50,

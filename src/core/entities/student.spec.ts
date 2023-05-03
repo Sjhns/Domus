@@ -2,7 +2,7 @@ import { it, describe, expect } from 'vitest'
 import { Student } from './student'
 
 describe('Student test', () => {
-  it('Should create new instace of Student', () => {
+  it('Should create new student', () => {
     const dataStudent = {
       id: 'dkdk&&9oo3o',
       name: 'John Barbosa',
