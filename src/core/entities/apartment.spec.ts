@@ -4,6 +4,7 @@ import { Apartment } from './apartment'
 describe('Apartment test', () => {
   it('Should create new apartment', () => {
     const dataApartment = {
+      id: 'sdsskslskksl',
       size: 50,
       numberOfRooms: 2,
       numberOfBathrooms: 1,

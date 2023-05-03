@@ -4,6 +4,7 @@ import { Student } from './student'
 describe('Student test', () => {
   it('Should create new student', () => {
     const dataStudent = {
+      id: 'sdsskslskksl',
       name: 'John Barbosa',
       email: 'john@email.com',
       phoneNumber: '(75) 91234-5678',
