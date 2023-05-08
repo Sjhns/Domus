@@ -1,12 +1,6 @@
-export type StudentProps = {
-  id: string
-  name: string
-  email: string
-  phoneNumber: string
+import { User } from './user'
+
+export type Student = User & {
   university: string
   course: string
-}
-
-export class Student {
-  constructor(public props: StudentProps) {}
 }
