@@ -1,15 +1,5 @@
-export interface SaveApartmentInterface {
-  insert: (apartment: SaveApartmentInterface.Params) => {}
-}
+import { Apartment } from '@/core/entities/apartment'
 
-namespace SaveApartmentInterface {
-  export type Params = {
-    id: string
-    address: string
-    size: number
-    numberOfRooms: number
-    numberOfBathrooms: number
-    rent: number
-    availableDate: string | Date
-  }
+export interface SaveApartment {
+  save: (apartment: Apartment) => Promise<Apartment | Record<string, string>>
 }
