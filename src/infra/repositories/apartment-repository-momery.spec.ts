@@ -8,14 +8,15 @@ describe('Apartment repository', () => {
     numberOfRooms: 2,
     numberOfBathrooms: 1,
     address: 'rua ramiro pimentel, avenida bem querer, 2563',
-    availableDate: 'Imediantate',
     rent: 600,
   }
 
   const apartmentRepositoryMemory = new ApartmentRepositoryMemory()
 
   it('Should register new apartment', async () => {
-    const result = await apartmentRepositoryMemory.save(dataNewApartment)
+    const result = await apartmentRepositoryMemory.saveApartment(
+      dataNewApartment,
+    )
 
     expect(result).toBeTruthy()
     expect(result).toBeDefined()
@@ -23,8 +24,8 @@ describe('Apartment repository', () => {
   })
 
   it('Should return all apartments', async () => {
-    const apartments = await apartmentRepositoryMemory.getAll()
-    console.log(apartments)
+    const apartments = await apartmentRepositoryMemory.getAllApartments()
+
     expect(apartments).toBeTruthy()
     expect(apartments).toEqual(
       expect.arrayContaining([expect.objectContaining(dataNewApartment)]),
