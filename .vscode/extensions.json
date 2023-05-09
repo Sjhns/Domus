@@ -1,0 +1,15 @@
+{
+    "recommendations": [
+        "dbaeumer.vscode-eslint",
+        "bceskavich.theme-dracula-at-night",
+        "visualstudioexptteam.vscodeintellicode",
+        "eamodio.gitlens",
+        "ms-vscode.vscode-typescript-next",
+        "esbenp.prettier-vscode",
+        "rvest.vs-code-prettier-eslint",
+        "ms-azuretools.vscode-docker",
+        "streetsidesoftware.code-spell-checker-portuguese-brazilian",
+        "streetsidesoftware.code-spell-checker",
+        "pkief.material-icon-theme"
+    ]
+}
