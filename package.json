@@ -7,9 +7,7 @@
   "scripts": {
     "test": "vitest --run",
     "coverage": "vitest run --coverage",
-    "prepare": "husky install",
-    "lint": "eslint . --ext .ts,.spec.ts",
-    "run": "tsx"
+    "lint": "eslint . --ext .ts,.spec.ts"
   },
   "keywords": [],
   "author": "",
