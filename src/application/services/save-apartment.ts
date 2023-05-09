@@ -3,7 +3,6 @@ import { Apartment } from '../../core/entities/apartment'
 import { SaveApartmentRepository } from '../contracts/save-apartment-repository'
 
 import { isLeft } from 'fp-ts/Either'
-import { ApartmentRepositoryMemory } from '@/infra/repositories/apartment-repository-momery'
 import { validateApartmentInput } from '../validators/apartment-schema'
 import { SaveApartmentInput } from '../types/save-apartment-input'
 import { InvalidInputError } from '../errors/invalid-input'
@@ -32,22 +31,13 @@ export class SaveApartmentService implements SaveApartment {
   }
 }
 
-const property = {
-  id: '123',
-  address: 'Rua das Flores, 123',
-  size: 100,
-  numberOfRooms: 3,
-  numberOfBathrooms: 2,
-  rent: 2000,
-}
+// const controller = async () => {
+//   const apartmentRepositoryMemory = new ApartmentRepositoryMemory()
+//   const saveApartmentService = new SaveApartmentService(
+//     apartmentRepositoryMemory,
+//   )
 
-const controller = async () => {
-  const apartmentRepositoryMemory = new ApartmentRepositoryMemory()
-  const saveApartmentService = new SaveApartmentService(
-    apartmentRepositoryMemory,
-  )
+//   console.log(await saveApartmentService.save(property))
+// }
 
-  console.log(await saveApartmentService.save(property))
-}
-
-controller()
+// controller()
