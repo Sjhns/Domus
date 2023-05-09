@@ -34,4 +34,13 @@ application só enxerga o domínio, o domínio não enxerga nada de fora.  Nunca
 
 Infra --> Application --> core/domain
 
+```css
+application/
+  |--contracts/
+  |--repositories/
+  |--services/
+  |--validators/
 
+```
+
+Dessa forma, é possível separar bem as responsabilidades de cada pasta. A pasta **contracts** pode conter os contratos de entrada e saída dos serviços, a pasta **repositories** pode conter as implementações das interfaces de repositório, a pasta **services** pode conter a lógica de negócios dos serviços e a pasta validators pode conter as regras de validação dos dados de entrada.
