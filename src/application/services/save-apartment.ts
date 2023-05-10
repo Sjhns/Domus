@@ -30,14 +30,3 @@ export class SaveApartmentService implements SaveApartment {
     return apartment
   }
 }
-
-// const controller = async () => {
-//   const apartmentRepositoryMemory = new ApartmentRepositoryMemory()
-//   const saveApartmentService = new SaveApartmentService(
-//     apartmentRepositoryMemory,
-//   )
-
-//   console.log(await saveApartmentService.save(property))
-// }
-
-// controller()
