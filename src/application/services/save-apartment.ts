@@ -20,7 +20,7 @@ export class SaveApartmentService implements SaveApartment {
         ok: false,
         eventTime: new Date().toLocaleString('pt-BR'),
       }
-      throw new InvalidInputError('Dados invalidos.', templateMessageError)
+      throw new InvalidInputError('Dados inválidos.', templateMessageError)
     }
 
     const apartment = await this.apartmentRepository.saveApartment(
