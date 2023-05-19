@@ -8,7 +8,7 @@
     "test": "vitest --run",
     "coverage": "vitest run --coverage",
     "lint": "eslint . --ext .ts,.spec.ts",
-    "dev": "tsx src/main/main.ts"
+    "dev": "tsx src/main/express/main.ts"
   },
   "keywords": [],
   "author": "",
