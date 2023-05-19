@@ -1,4 +1,7 @@
-import { ApartmentModel } from './models/apartment-model'
+
+import { Apartment } from '@/core/entities/apartment'
+
+export type ApartmentModel = Apartment
 
 export interface SaveApartmentRepository {
   saveApartment: (apartment: ApartmentModel) => Promise<ApartmentModel>

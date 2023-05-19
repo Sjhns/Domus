@@ -1,5 +1,7 @@
-import { ApartmentModel } from '@/application/contracts/models/apartment-model'
-import { SaveApartmentRepository } from '@/application/contracts/save-apartment-repository'
+import {
+  ApartmentModel,
+  SaveApartmentRepository,
+} from '@/application/contracts/save-apartment-repository'
 
 export class ApartmentRepositoryMemory implements SaveApartmentRepository {
   private databaseMemory = []
