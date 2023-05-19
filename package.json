@@ -7,7 +7,8 @@
   "scripts": {
     "test": "vitest --run",
     "coverage": "vitest run --coverage",
-    "lint": "eslint . --ext .ts,.spec.ts"
+    "lint": "eslint . --ext .ts,.spec.ts",
+    "dev": "tsx src/main/main.ts"
   },
   "keywords": [],
   "author": "",
@@ -16,6 +17,7 @@
     "@commitlint/cli": "^17.6.1",
     "@commitlint/config-conventional": "^17.6.1",
     "@rocketseat/eslint-config": "^1.2.0",
+    "@types/express": "^4.17.17",
     "@types/node": "^18.16.3",
     "commitizen": "^4.3.0",
     "eslint": "^8.39.0",
@@ -27,6 +29,7 @@
     "vitest": "^0.30.1"
   },
   "dependencies": {
+    "express": "^4.18.2",
     "fp-ts": "^2.15.0",
     "yup": "^1.1.1"
   }
