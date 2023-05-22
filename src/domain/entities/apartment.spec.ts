@@ -18,7 +18,7 @@ describe('Entity apartment test', () => {
     expect(apartment.props).toStrictEqual(dataApartment)
   })
 
-  it('Should give an error when assigning a negative value', () => {
+  it('should throw an error when invalid properties are passed', () => {
     const invalidProps = {
       id: '123',
       address: '123 Main Street',
