@@ -6,6 +6,7 @@
   "private": "true",
   "scripts": {
     "test": "vitest --run",
+    "start": "node ./dist/main/express/main.js",
     "coverage": "vitest run --coverage",
     "lint": "eslint . --ext .ts,.spec.ts",
     "dev": "tsx src/main/express/main.ts"
