@@ -41,3 +41,30 @@ Dessa forma, é possível separar bem as responsabilidades de cada pasta. A past
 
 
 https://www.youtube.com/watch?v=yLPxkIxbNDg ---> continua
+
+
+├── domain
+│   ├── entities
+│   ├── repositories
+│   └── services
+├── application
+│   ├── usecases
+│   ├── dtos
+│   └── mappers
+└── infra
+    ├── persistence
+    │   ├── repositories
+    │   └── models
+    ├── external
+    │   ├── services
+    │   └── clients
+    └── config
+
+Nessa estrutura:
+
+A pasta domain contém os elementos centrais do domínio da aplicação. Isso inclui as entidades do domínio, as interfaces dos repositórios (contratos), e os serviços do domínio, se houver.
+A pasta application abriga a lógica de aplicação. Os casos de uso (use cases) são implementados aqui, juntamente com os Data Transfer Objects (DTOs) que definem as estruturas de dados transferidas entre as camadas.
+A pasta infra engloba a infraestrutura e detalhes de implementação. Isso pode incluir a persistência de dados, serviços externos e configurações específicas da infraestrutura.
+Na pasta persistence, você encontrará a implementação dos repositórios, bem como os modelos de dados (se houver).
+Na pasta external, você pode colocar a implementação de serviços externos ou clientes para integrações com APIs, por exemplo.
+A pasta config é usada para armazenar arquivos de configuração relacionados à infraestrutura.
