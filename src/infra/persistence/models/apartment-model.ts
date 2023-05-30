@@ -1,5 +1,5 @@
 export type ApartmentModel = {
-  id: string
+  id?: string
   address: string
   size: number
   numberOfRooms: number
