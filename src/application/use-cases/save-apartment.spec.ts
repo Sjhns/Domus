@@ -4,7 +4,6 @@ import { SaveApartmentUseCase } from './save-apartment'
 describe('Save apartment use case', () => {
   it('Should save an apartment not accepts roommates', async () => {
     const dataApartment = {
-      id: '2235653265862ss',
       size: 50,
       numberOfRooms: 2,
       numberOfBathrooms: 1,
@@ -17,13 +16,12 @@ describe('Save apartment use case', () => {
 
     const saveApartmentUseCase = new SaveApartmentUseCase()
     const output = await saveApartmentUseCase.execute(dataApartment)
-    expect(output.id).toEqual(dataApartment.id)
+    expect(output.id).toBeDefined()
     expect(output.maxRoommates).toBeUndefined()
     expect(output).toBeDefined()
   })
   it('Should save an apartment that accepts roommates', async () => {
     const dataApartment = {
-      id: '2235653265862ss',
       size: 50,
       numberOfRooms: 2,
       numberOfBathrooms: 1,
@@ -37,7 +35,7 @@ describe('Save apartment use case', () => {
 
     const saveApartmentUseCase = new SaveApartmentUseCase()
     const output = await saveApartmentUseCase.execute(dataApartment)
-    expect(output.id).toEqual(dataApartment.id)
+    expect(output.id).toBeDefined()
     expect(output.maxRoommates).toBeDefined()
     expect(output.maxRoommates).toEqual(dataApartment.maxRoommates)
     expect(output).toBeDefined()
