@@ -34,7 +34,7 @@ describe('Apartment repository memory', () => {
   it('should return all apartments from the database', async () => {
     const output = await apartmentRepositoryMemory.findAll()
 
-    expect(output.length).toBeLessThanOrEqual(1)
+    expect(output?.length).toBeLessThanOrEqual(1)
   })
 
   it('should return the apartment with the given ID', async () => {
