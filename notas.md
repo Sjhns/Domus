@@ -68,3 +68,37 @@ A pasta infra engloba a infraestrutura e detalhes de implementação. Isso pode 
 Na pasta persistence, você encontrará a implementação dos repositórios, bem como os modelos de dados (se houver).
 Na pasta external, você pode colocar a implementação de serviços externos ou clientes para integrações com APIs, por exemplo.
 A pasta config é usada para armazenar arquivos de configuração relacionados à infraestrutura.
+
+---
+
+{
+  "titulo": "",
+  "data": ""
+  "imagem": []
+  "valor do apartamento": 
+  "informações do vendedor": {
+    ""
+  },
+  "localização": {
+    "cep": ""
+    "município"
+    "Bairro"
+    "Logradouro"
+  },
+
+  detalhes: {
+    "categoria":
+    "tipo"
+    "condomínio"
+    "IPTU"
+    "Quartos"
+    "Banheiro"
+    "Vagas na garagem"
+    "Detalhes do imóvel"
+    "Area util"
+    "banheiro"
+    "vagas"
+  }
+}
+
+oxl: https://ba.olx.com.br/regiao-de-vitoria-da-conquista-e-barreiras/imoveis/apartamento-3-quartos-1191376594?lis=listing_1002
