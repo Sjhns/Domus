@@ -1,7 +1,12 @@
 import { describe, expect, it } from 'vitest'
 import { SaveApartmentUseCase } from './save-apartment'
+import { ApartmentRepositoryMemory } from '../../infra/persistence/repositories/apartment-repository-memory'
 
 describe('Save apartment use case', () => {
+  const apartmentRepositoryMemory = new ApartmentRepositoryMemory()
+  const saveApartmentUseCase = new SaveApartmentUseCase(
+    apartmentRepositoryMemory,
+  )
   it('Should save an apartment not accepts roommates', async () => {
     const dataApartment = {
       size: 50,
@@ -14,7 +19,6 @@ describe('Save apartment use case', () => {
       acceptsRoommates: false,
     }
 
-    const saveApartmentUseCase = new SaveApartmentUseCase()
     const output = await saveApartmentUseCase.execute(dataApartment)
     expect(output.id).toBeDefined()
     expect(output.maxRoommates).toBeUndefined()
@@ -33,7 +37,6 @@ describe('Save apartment use case', () => {
       maxRoommates: 2,
     }
 
-    const saveApartmentUseCase = new SaveApartmentUseCase()
     const output = await saveApartmentUseCase.execute(dataApartment)
     expect(output.id).toBeDefined()
     expect(output.maxRoommates).toBeDefined()
