@@ -1,7 +1,7 @@
 import { ApartmentRepositoryContract } from '@/application/contracts/apartment-repository'
 import { ApartmentModel } from '../contracts/apartment-model'
 import { ApartmentOutput } from '../dtos/output-apartment'
-import { FindApartmentUseCaseContract } from '@/domain/contracts/apartment-useCase'
+import { FindApartmentUseCaseContract } from '@/domain/contracts/apartment-use-cases'
 
 export class FindApartmentUseCase implements FindApartmentUseCaseContract {
   constructor(

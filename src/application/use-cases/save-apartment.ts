@@ -4,7 +4,7 @@ import { ApartmentOutput } from '../dtos/output-apartment'
 import { randomUUID } from 'crypto'
 import { ApartmentRepositoryContract } from '@/application/contracts/apartment-repository'
 import { ApartmentModel } from '../contracts/apartment-model'
-import { SaveApartmentUseCaseContract } from '@/domain/contracts/apartment-useCase'
+import { SaveApartmentUseCaseContract } from '@/domain/contracts/apartment-use-cases'
 
 export class SaveApartmentUseCase implements SaveApartmentUseCaseContract {
   constructor(
