@@ -1,5 +1,5 @@
-export type SaveApartmentDTOInput = {
-  id?: string
+export type ApartmentOutput = {
+  id: string
   address: string
   size: number
   numberOfRooms: number
