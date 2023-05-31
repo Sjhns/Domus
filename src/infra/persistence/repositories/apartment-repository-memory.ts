@@ -1,7 +1,10 @@
 import { SaveApartmentDTOInput } from '@/application/dtos/input-save-apartment'
 import { ApartmentModel } from '../models/apartment-model'
+import { ApartmentRepositoryContract } from '@/domain/repository/apartment-repository'
 
-export class ApartmentRepositoryMemory {
+export class ApartmentRepositoryMemory
+  implements ApartmentRepositoryContract<ApartmentModel>
+{
   private database: ApartmentModel[] = []
 
   async save(input: SaveApartmentDTOInput): Promise<ApartmentModel> {
