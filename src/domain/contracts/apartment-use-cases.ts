@@ -1,11 +1,11 @@
-import { SaveApartmentDTOInput } from '@/application/dtos/input-save-apartment'
-import { ApartmentOutput } from '@/application/dtos/output-apartment'
+import { SaveImmobileDTOInput } from '@/application/dtos/input-save-immobile'
+import { ImmobileOutput } from '@/application/dtos/output-immobile'
 
 export interface SaveApartmentUseCaseContract {
-  execute: (input: SaveApartmentDTOInput) => Promise<ApartmentOutput>
+  execute: (input: SaveImmobileDTOInput) => Promise<ImmobileOutput>
 }
 
 export interface FindApartmentUseCaseContract {
-  all: () => Promise<ApartmentOutput[]>
-  one: (id: string) => Promise<ApartmentOutput>
+  all: () => Promise<ImmobileOutput[]>
+  one: (id: string) => Promise<ImmobileOutput>
 }

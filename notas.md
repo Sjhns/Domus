@@ -1,4 +1,4 @@
-https://dev.to/vitordevsp/padronizacao-de-commit-com-commitlint-husky-e-commitizen-3g1n
+<https://dev.to/vitordevsp/padronizacao-de-commit-com-commitlint-husky-e-commitizen-3g1n>
 
 dá uma olhada depois: commitizen
 
@@ -8,14 +8,13 @@ A ideia de atribuir para a entidade regras genéricas é evitar que ela seja uma
 
 Nossas entidades são o coração da nossa aplicação. Ela deve ter um papel neste ecossistema. Porém, é preciso entender que as regras atrelados a nossa entidades devem ser genéricas, pois para uma regras mais especificas/rígidas é trabalho dos casos de uso isso.
 
-
 ------------     core/domain -----------------
 
 Dentro do core/domain não é colocado implementações apenas interfaces/contratos/modelos/entity que irão nortear o nosso sistema.
 
---- 
+---
 
-type: tipagem 
+type: tipagem
 class: se tive métodos, comportamento, DDD - é recomendado que tenha alguma lógica de negócio aqui.
 interfaces: para contratos
 
@@ -24,7 +23,7 @@ core/domain: é dados e protocolos.
 application: será a implementação dessas regras.
  --> Para cada caso de uso terá um único serviço. Relação 1:1  
 
-application só enxerga o domínio, o domínio não enxerga nada de fora.  Nunca poderá ter imports de coisas externas. 
+application só enxerga o domínio, o domínio não enxerga nada de fora.  Nunca poderá ter imports de coisas externas.
 
 Infra --> Application --> core/domain
 
@@ -39,9 +38,7 @@ application/
 
 Dessa forma, é possível separar bem as responsabilidades de cada pasta. A pasta **contracts** pode conter os contratos de entrada e saída dos serviços, a pasta **repositories** pode conter as implementações das interfaces de repositório, a pasta **services** pode conter a lógica de negócios dos serviços e a pasta validators pode conter as regras de validação dos dados de entrada.
 
-
-https://www.youtube.com/watch?v=yLPxkIxbNDg ---> continua
-
+<https://www.youtube.com/watch?v=yLPxkIxbNDg> ---> continua
 
 ├── domain
 │   ├── entities
@@ -72,33 +69,105 @@ A pasta config é usada para armazenar arquivos de configuração relacionados �
 ---
 
 {
-  "titulo": "",
-  "data": ""
-  "imagem": []
-  "valor do apartamento": 
-  "informações do vendedor": {
+  "data criação": ""
+  "ultima data atualização"
+  "imagens": []
+  "valor do apartamento":
+  "informações do vendedor/locatário": {
     ""
   },
   "localização": {
     "cep": ""
-    "município"
+    "Estado"
+    "cidade"
     "Bairro"
-    "Logradouro"
+    "logradouro"
+    "numero"
   },
 
-  detalhes: {
     "categoria":
     "tipo"
-    "condomínio"
-    "IPTU"
+    "metros quadrados"
     "Quartos"
     "Banheiro"
     "Vagas na garagem"
-    "Detalhes do imóvel"
+    "Detalhes do imóvel/ descrição"
     "Area util"
     "banheiro"
     "vagas"
+    "aceitas colegas de quartos"
+    "numero de pessoas que pode compartilhar o apartamento"
+}
+
+oxl: <https://ba.olx.com.br/regiao-de-vitoria-da-conquista-e-barreiras/imoveis/apartamento-3-quartos-1191376594?lis=listing_1002>
+
+chaves na mão: <https://www.chavesnamao.com.br/imovel/apartamento-para-alugar-2-quartos-com-garagem-ba-vitoria-da-conquista-candeias-70m2-RS1320/id-10301963/>
+
+viva real: <https://www.vivareal.com.br/imovel/apartamento-3-quartos-boa-vista-bairros-vitoria-da-conquista-com-garagem-67m2-aluguel-RS1500-id-2633149741/>
+
+tipos de imoveis: <https://imoveis.estadao.com.br/compra/conheca-os-9-tipos-de-imoveis-residenciais-e-as-diferencas-entre-eles/>
+
+
+```typescript
+{
+  type ApartmentProps = {
+  id: string
+  address: string
+  size: number // tamanho do apartamento em metros quadrados
+  numberOfRooms: number
+  numberOfBathrooms: number
+  vacancies: number // vagas de carros
+  rent: number
+  acceptsRoommates: boolean // indica se aceita colegas de quarto
+  maxRoommates?: number // número máximo de pessoas que podem compartilhar o apartamento
+}
+
+export class Apartment {
+  constructor(public props: ApartmentProps) {
+    this.validateProperties()
+    this.validateAddressPattern()
+  }
+
+  validateProperties(): void {
+    const {
+      size,
+      numberOfBathrooms,
+      numberOfRooms,
+      vacancies,
+      rent,
+      acceptsRoommates,
+      maxRoommates,
+    } = this.props
+
+    const validate =
+      size > 0 &&
+      numberOfRooms > 0 &&
+      numberOfBathrooms > 0 &&
+      vacancies >= 0 &&
+      rent >= 0 &&
+      (acceptsRoommates ? maxRoommates !== undefined && maxRoommates > 0 : true)
+
+    if (!validate) {
+      throw new Error('Informações não são válidas')
+    }
+  }
+
+  validateAddressPattern(): void {
+    const { address } = this.props
+
+    const addressPattern =
+      /^[A-Za-z0-9\s]+,\s[0-9]+\s-\s[A-Za-z0-9\s]+,\s[A-Za-z\s]+,\s[A-Za-z\s]+,\s[A-Za-z\s]+$/
+
+    if (!addressPattern.test(address)) {
+      throw new Error(
+        'Endereço inválido. O formato correto é "nome da rua, número - bairro, cidade, estado, país".',
+      )
+    }
   }
 }
 
-oxl: https://ba.olx.com.br/regiao-de-vitoria-da-conquista-e-barreiras/imoveis/apartamento-3-quartos-1191376594?lis=listing_1002
+}
+
+```
+
+

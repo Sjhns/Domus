@@ -1,6 +1,6 @@
 import { beforeAll, describe, expect, it } from 'vitest'
 import { ApartmentRepositoryMemory } from '../../infra/persistence/repositories/apartment-repository-memory'
-import { FindApartmentUseCase } from './find-apartment'
+import { FindApartmentUseCase } from './find-immobile'
 
 describe('Find apartment use case', () => {
   const apartmentRepositoryMemory = new ApartmentRepositoryMemory()

@@ -1,8 +1,8 @@
-import { ApartmentModel } from '@/application/contracts/apartment-model'
-import { SaveApartmentDTOInput } from '@/application/dtos/input-save-apartment'
-import { ApartmentOutput } from '@/application/dtos/output-apartment'
+import { ApartmentModel } from '@/application/contracts/immobile-model'
+import { SaveApartmentDTOInput } from '@/application/dtos/input-save-immobile'
+import { ApartmentOutput } from '@/application/dtos/output-immobile'
 
-import { ApartmentRepositoryContract } from '@/application/contracts/apartment-repository'
+import { ApartmentRepositoryContract } from '@/application/contracts/immobile-repository'
 
 export class ApartmentRepositoryMemory
   implements ApartmentRepositoryContract<ApartmentModel, ApartmentOutput>

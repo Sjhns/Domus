@@ -1,4 +1,4 @@
-export type ApartmentModel = {
+export type ImmobileModel = {
   id?: string
   address: string
   size: number

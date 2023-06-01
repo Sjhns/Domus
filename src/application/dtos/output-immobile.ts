@@ -1,5 +1,5 @@
-export type SaveApartmentDTOInput = {
-  id?: string
+export type ImmobileOutput = {
+  id: string
   address: string
   size: number
   numberOfRooms: number
