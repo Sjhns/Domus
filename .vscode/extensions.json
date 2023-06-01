@@ -15,6 +15,7 @@
   "material-icon-theme.folders.associations": {
     "application": "container",
     "adapters": "contract",
+    "persistence": "container",
     "grpc": "pipe",
     "kube": "kubernetes",
     "main": "lib",
@@ -40,9 +41,11 @@
     "view-models": "views",
     "presentation": "template",
     "dtos": "typescript",
+    "dto": "typescript",
     "http": "container",
     "providers": "include",
     "factories": "class",
-    "repositories": "mappings"
+    "repositories": "mappings",
+    "repository": "mappings"
   }
 }
