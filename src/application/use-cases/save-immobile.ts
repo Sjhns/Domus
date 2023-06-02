@@ -2,12 +2,12 @@ import { SaveImmobileDTOInput } from '../dtos/input-save-immobile'
 import { ImmobileOutput } from '../dtos/output-immobile'
 import { randomUUID } from 'crypto'
 import { ImmobileRepositoryContract } from '@/application/contracts/immobile-repository'
-import { SaveApartmentUseCaseContract } from '@/domain/contracts/immobile'
+import { SaveImmobileUseCaseContract } from '@/domain/contracts/immobile-services'
 import { Immobile } from '@/domain/entities/immobile'
 
-export class SaveApartmentUseCase implements SaveApartmentUseCaseContract {
+export class SaveImmobileUseCase implements SaveImmobileUseCaseContract {
   constructor(
-    private readonly apartmentRepository: ImmobileRepositoryContract<ImmobileOutput>,
+    private readonly immobileRepository: ImmobileRepositoryContract,
   ) {}
 
   async execute(input: SaveImmobileDTOInput): Promise<ImmobileOutput> {
@@ -20,19 +20,8 @@ export class SaveApartmentUseCase implements SaveApartmentUseCaseContract {
 
     const apartment = new Immobile(schemaInput)
 
-    const output = await this.apartmentRepository.save(apartment.props)
+    const output = await this.immobileRepository.save(apartment.props)
 
-    const schemaOutput = {
-      acceptsRoommates: output.acceptsRoommates,
-      address: output.address,
-      id: output.id,
-      numberOfBathrooms: output.numberOfBathrooms,
-      numberOfRooms: output.numberOfRooms,
-      rent: output.rent,
-      size: output.size,
-      vacancies: output.vacancies,
-      maxRoommates: output.maxRoommates,
-    }
-    return schemaOutput
+    return output
   }
 }

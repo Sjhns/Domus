@@ -1,82 +1,60 @@
 import { describe, expect, it } from 'vitest'
-import { SaveApartmentUseCase } from './save-immobile'
-import { ApartmentRepositoryMemory } from '../../infra/persistence/repositories/apartment-repository-memory'
+import { SaveImmobileUseCase } from './save-immobile'
+import { ImmobileRepositoryMemory } from '../../infra/persistence/repositories/immobile-repository-memory'
 
-describe('Save apartment use case', () => {
-  const apartmentRepositoryMemory = new ApartmentRepositoryMemory()
-  const saveApartmentUseCase = new SaveApartmentUseCase(
-    apartmentRepositoryMemory,
-  )
-  it('Should save an apartment not accepts roommates', async () => {
-    const immobileData = {
-      id: '1',
-      createdAt: '2023-06-01',
-      updatedAt: '2023-06-01',
-      images: ['image1.jpg', 'image2.jpg'],
-      price: 2000,
-      landlord: {
-        name: 'John Doe',
-        email: 'john.doe@example.com',
-        phone: '123456789',
-        occupation: 'Real Estate Agent',
-      },
-      location: {
-        zipCode: '12345-678',
-        state: 'California',
-        city: 'Los Angeles',
-        neighborhood: 'Downtown',
-        street: 'Main Street',
-        number: '123',
-      },
-      type: 'Apartment',
-      squareMeters: 80,
-      bedrooms: 2,
-      bathrooms: 1,
-      parkingSpaces: 1,
-      description: 'Cozy apartment in downtown',
-      acceptsRoommates: false,
-    }
+describe('Save immobile use case', () => {
+  const immobileRepositoryMemory = new ImmobileRepositoryMemory()
+  const saveImmobileUseCase = new SaveImmobileUseCase(immobileRepositoryMemory)
+  const immobileData = {
+    id: '1',
+    createdAt: '2023-06-01',
+    updatedAt: '2023-06-01',
+    images: ['image1.jpg', 'image2.jpg'],
+    price: 2000,
+    landlord: {
+      name: 'John Doe',
+      email: 'john.doe@example.com',
+      phone: '123456789',
+      occupation: 'Real Estate Agent',
+    },
+    location: {
+      zipCode: '12345-678',
+      state: 'California',
+      city: 'Los Angeles',
+      neighborhood: 'Downtown',
+      street: 'Main Street',
+      number: '123',
+    },
+    type: 'Apartment',
+    squareMeters: 80,
+    bedrooms: 2,
+    bathrooms: 1,
+    parkingSpaces: 1,
+    description: 'Cozy apartment in downtown',
+    acceptsRoommates: false,
+  }
 
-    const output = await saveApartmentUseCase.execute(immobileData)
+  it('Should save an immobile not accepts roommates', async () => {
+    const output = await saveImmobileUseCase.execute(immobileData)
     expect(output.id).toBeDefined()
     expect(output.maxRoommates).toBeUndefined()
     expect(output).toBeDefined()
   })
-  it('Should save an apartment that accepts roommates', async () => {
-    const immobileData = {
-      id: '1',
-      createdAt: '2023-06-01',
-      updatedAt: '2023-06-01',
-      images: ['image1.jpg', 'image2.jpg'],
-      price: 2000,
-      landlord: {
-        name: 'John Doe',
-        email: 'john.doe@example.com',
-        phone: '123456789',
-        occupation: 'Real Estate Agent',
-      },
-      location: {
-        zipCode: '12345-678',
-        state: 'California',
-        city: 'Los Angeles',
-        neighborhood: 'Downtown',
-        street: 'Main Street',
-        number: '123',
-      },
-      type: 'Apartment',
-      squareMeters: 80,
-      bedrooms: 2,
-      bathrooms: 1,
-      parkingSpaces: 1,
-      description: 'Cozy apartment in downtown',
+  it('Should save an immobile that accepts roommates', async () => {
+    const immobileDataAcceptsRoommates = {
+      ...immobileData,
       acceptsRoommates: true,
       maxRoommates: 2,
     }
 
-    const output = await saveApartmentUseCase.execute(immobileData)
+    const output = await saveImmobileUseCase.execute(
+      immobileDataAcceptsRoommates,
+    )
     expect(output.id).toBeDefined()
     expect(output.maxRoommates).toBeDefined()
-    expect(output.maxRoommates).toEqual(immobileData.maxRoommates)
+    expect(output.maxRoommates).toEqual(
+      immobileDataAcceptsRoommates.maxRoommates,
+    )
     expect(output).toBeDefined()
   })
 })

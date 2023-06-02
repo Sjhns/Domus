@@ -1,46 +1,62 @@
 import { beforeAll, describe, expect, it } from 'vitest'
-import { ApartmentRepositoryMemory } from '../../infra/persistence/repositories/apartment-repository-memory'
-import { FindApartmentUseCase } from './find-immobile'
+import { ImmobileRepositoryMemory } from '../../infra/persistence/repositories/immobile-repository-memory'
+import { FindImmobileUseCase } from './find-immobile'
 
-describe('Find apartment use case', () => {
-  const apartmentRepositoryMemory = new ApartmentRepositoryMemory()
-  const findApartmentUseCase = new FindApartmentUseCase(
-    apartmentRepositoryMemory,
-  )
+describe('Find immobile use case', () => {
+  const immobileRepositoryMemory = new ImmobileRepositoryMemory()
+  const findImmobileUseCase = new FindImmobileUseCase(immobileRepositoryMemory)
 
-  const dataApartment = {
-    id: 'so52so4so4s5s5',
-    size: 50,
-    numberOfRooms: 2,
-    numberOfBathrooms: 1,
-    address: 'Alameda Franca, 579 - Jardim Bem Querer, Salvador, Bahia, Brasil',
-    rent: 600,
-    vacancies: 1,
-    acceptsRoommates: true,
-    maxRoommates: 2,
+  const immobileData = {
+    id: '1',
+    createdAt: '2023-06-01',
+    updatedAt: '2023-06-01',
+    images: ['image1.jpg', 'image2.jpg'],
+    price: 2000,
+    landlord: {
+      name: 'John Doe',
+      email: 'john.doe@example.com',
+      phone: '123456789',
+      occupation: 'Real Estate Agent',
+    },
+    location: {
+      zipCode: '12345-678',
+      state: 'California',
+      city: 'Los Angeles',
+      neighborhood: 'Downtown',
+      street: 'Main Street',
+      number: '123',
+    },
+    type: 'Apartment',
+    squareMeters: 64,
+    bedrooms: 1,
+    bathrooms: 2,
+    parkingSpaces: 1,
+    description: 'Cozy apartment in downtown',
+    acceptsRoommates: false,
   }
+
   beforeAll(async () => {
-    await apartmentRepositoryMemory.save(dataApartment)
+    await immobileRepositoryMemory.save(immobileData)
   })
 
-  it('Should return all apartments', async () => {
-    const output = await findApartmentUseCase.all()
+  it('Should return all immobile', async () => {
+    const output = await findImmobileUseCase.all()
 
     expect(output).toBeDefined()
-    expect(output.length).toBe(1)
-    expect(output[0].id).toBe(dataApartment.id)
+    expect(output?.length).toBe(1)
+    expect(output[0].id).toBe(immobileData.id)
   })
 
-  it('should return a specific apartment by ID', async () => {
-    const output = await findApartmentUseCase.one(dataApartment.id)
+  it('should return a specific immobile by ID', async () => {
+    const output = await findImmobileUseCase.one(immobileData.id)
 
     expect(output).toBeDefined()
-    expect(output).toMatchObject(dataApartment)
-    expect(output.id).toBe(dataApartment.id)
+    expect(output).toMatchObject(immobileData)
+    expect(output?.id).toBe(immobileData.id)
   })
 
-  it('should return undefined if apartment is not found', async () => {
-    const output = await findApartmentUseCase.one('3')
+  it('should return undefined if immobile is not found', async () => {
+    const output = await findImmobileUseCase.one('3')
 
     expect(output).toBeUndefined()
   })

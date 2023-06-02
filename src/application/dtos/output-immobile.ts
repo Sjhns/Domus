@@ -1,4 +1,4 @@
-type Location = {
+export type Location = {
   zipCode: string
   state: string
   city: string
@@ -7,7 +7,7 @@ type Location = {
   number: string
 }
 
-type Landlord = {
+export type Landlord = {
   name: string
   email: string
   phone: string

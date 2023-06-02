@@ -6,6 +6,6 @@ export interface SaveImmobileUseCaseContract {
 }
 
 export interface FindImmobileUseCaseContract {
-  all: () => Promise<ImmobileOutput[]>
-  one: (id: string) => Promise<ImmobileOutput>
+  all: () => Promise<ImmobileOutput[] | void>
+  one: (id: string) => Promise<ImmobileOutput | void>
 }

@@ -1,24 +1,20 @@
 import { ImmobileRepositoryContract } from '@/application/contracts/immobile-repository'
-import { ImmobileModel } from '../contracts/immobile-model'
 import { ImmobileOutput } from '../dtos/output-immobile'
-import { FindApartmentUseCaseContract } from '@/domain/contracts/immobile'
+import { FindImmobileUseCaseContract } from '@/domain/contracts/immobile-services'
 
-export class FindApartmentUseCase implements FindApartmentUseCaseContract {
+export class FindImmobileUseCase implements FindImmobileUseCaseContract {
   constructor(
-    private readonly apartmentRepository: ImmobileRepositoryContract<
-      ImmobileModel,
-      ImmobileOutput
-    >,
+    private readonly immobileRepository: ImmobileRepositoryContract,
   ) {}
 
-  async all(): Promise<ImmobileOutput[]> {
-    const output = await this.apartmentRepository.findAll()
+  async all(): Promise<ImmobileOutput[] | void> {
+    const output = await this.immobileRepository.findAll()
 
     return output
   }
 
-  async one(id: string): Promise<ImmobileOutput> {
-    const output = await this.apartmentRepository.findOne(id)
+  async one(id: string): Promise<ImmobileOutput | void> {
+    const output = await this.immobileRepository.findOne(id)
 
     return output
   }
