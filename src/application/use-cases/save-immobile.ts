@@ -2,16 +2,12 @@ import { SaveImmobileDTOInput } from '../dtos/input-save-immobile'
 import { ImmobileOutput } from '../dtos/output-immobile'
 import { randomUUID } from 'crypto'
 import { ImmobileRepositoryContract } from '@/application/contracts/immobile-repository'
-import { ImmobileModel } from '../contracts/immobile-model'
-import { SaveApartmentUseCaseContract } from '@/domain/contracts/apartment-use-cases'
+import { SaveApartmentUseCaseContract } from '@/domain/contracts/immobile'
 import { Immobile } from '@/domain/entities/immobile'
 
 export class SaveApartmentUseCase implements SaveApartmentUseCaseContract {
   constructor(
-    private readonly apartmentRepository: ImmobileRepositoryContract<
-      ImmobileModel,
-      ImmobileOutput
-    >,
+    private readonly apartmentRepository: ImmobileRepositoryContract<ImmobileOutput>,
   ) {}
 
   async execute(input: SaveImmobileDTOInput): Promise<ImmobileOutput> {

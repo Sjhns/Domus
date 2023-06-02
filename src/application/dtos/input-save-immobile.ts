@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 type Location = {
   zipCode: string
   state: string
@@ -16,9 +15,6 @@ type Landlord = {
 }
 
 export type SaveImmobileDTOInput = {
-  id?: string
-  createdAt?: string
-  updatedAt?: string
   images: string[]
   price: number
   landlord: Landlord

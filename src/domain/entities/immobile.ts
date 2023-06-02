@@ -1,5 +1,3 @@
-/* eslint-disable no-unused-vars */
-
 type Location = {
   zipCode: string
   state: string
@@ -14,13 +12,6 @@ type Landlord = {
   email: string
   phone: string
   occupation: string
-}
-
-enum TypeImmobile {
-  HOUSE = 'House',
-  APARTMENT = 'Apartment',
-  KITNET = 'Kitnet',
-  OTHER = 'Other',
 }
 
 type ImmobileProps = {

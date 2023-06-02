@@ -1,44 +1,66 @@
-import { ApartmentModel } from '@/application/contracts/immobile-model'
-import { SaveApartmentDTOInput } from '@/application/dtos/input-save-immobile'
-import { ApartmentOutput } from '@/application/dtos/output-immobile'
+import { SaveImmobileDTOInput } from '@/application/dtos/input-save-immobile'
 
-import { ApartmentRepositoryContract } from '@/application/contracts/immobile-repository'
+import { ImmobileRepositoryContract } from '@/application/contracts/immobile-repository'
+import { ImmobileModel } from '@/application/contracts/immobile-model'
+import { ImmobileOutput } from '@/application/dtos/output-immobile'
 
-export class ApartmentRepositoryMemory
-  implements ApartmentRepositoryContract<ApartmentModel, ApartmentOutput>
-{
-  private database: ApartmentModel[] = []
+export class ApartmentRepositoryMemory implements ImmobileRepositoryContract {
+  private database: ImmobileModel[] = []
 
-  async save(input: SaveApartmentDTOInput): Promise<ApartmentModel> {
+  async save(input: SaveImmobileDTOInput): Promise<ImmobileOutput> {
     this.database.push(input)
     return input
   }
 
-  async findAll(): Promise<ApartmentOutput[] | undefined> {
-    const apartment = this.database
+  async findAll(): Promise<ImmobileOutput[] | undefined> {
+    const immobile = this.database
 
-    if (!apartment) {
+    if (!immobile) {
       return undefined
     }
 
-    const schemaOutput = apartment.map((apartment) => {
-      return {
-        acceptsRoommates: apartment.acceptsRoommates,
-        address: apartment.address,
-        id: apartment.id,
-        numberOfBathrooms: apartment.numberOfBathrooms,
-        numberOfRooms: apartment.numberOfRooms,
-        rent: apartment.rent,
-        size: apartment.size,
-        vacancies: apartment.vacancies,
-        maxRoommates: apartment.maxRoommates,
+    const schemaOutput: ImmobileOutput[] = immobile.map((immobile) => {
+      const location = {
+        zipCode: immobile.location.zipCode,
+        state: immobile.location.state,
+        city: immobile.location.city,
+        neighborhood: immobile.location.neighborhood,
+        street: immobile.location.street,
+        number: immobile.location.number,
       }
+
+      const landlord = {
+        name: immobile.landlord.name,
+        email: immobile.landlord.email,
+        phone: immobile.landlord.phone,
+        occupation: immobile.landlord.occupation,
+      }
+
+      const immobileOutput = {
+        id: immobile.id,
+        createdAt: immobile.createdAt,
+        updatedAt: immobile.updatedAt,
+        images: immobile.images,
+        price: immobile.price,
+        landlord,
+        location,
+        type: immobile.type,
+        squareMeters: immobile.squareMeters,
+        bedrooms: immobile.bathrooms,
+        bathrooms: immobile.bathrooms,
+        parkingSpaces: immobile.parkingSpaces,
+        description: immobile.description,
+        acceptsRoommates: immobile.acceptsRoommates,
+        maxRoommates: immobile.maxRoommates,
+      }
+
+      return immobileOutput
     })
 
     return schemaOutput
   }
 
-  async findOne(id: string): Promise<ApartmentOutput | undefined> {
+  async findOne(id: string): Promise<ImmobileOutput | undefined> {
     const apartment = this.database.find((user) => user.id === id)
 
     if (!apartment) {
@@ -62,7 +84,7 @@ export class ApartmentRepositoryMemory
 
   async update(
     id: string,
-    input: SaveApartmentDTOInput,
+    input: SaveImmobileDTOInput,
   ): Promise<ApartmentModel> {
     const index = this.database.findIndex((apartment) => apartment.id === id)
 

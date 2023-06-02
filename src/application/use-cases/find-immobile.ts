@@ -1,7 +1,7 @@
 import { ImmobileRepositoryContract } from '@/application/contracts/immobile-repository'
 import { ImmobileModel } from '../contracts/immobile-model'
 import { ImmobileOutput } from '../dtos/output-immobile'
-import { FindApartmentUseCaseContract } from '@/domain/contracts/apartment-use-cases'
+import { FindApartmentUseCaseContract } from '@/domain/contracts/immobile'
 
 export class FindApartmentUseCase implements FindApartmentUseCaseContract {
   constructor(
