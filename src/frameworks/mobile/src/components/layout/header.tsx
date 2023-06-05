@@ -4,7 +4,7 @@ export const Header = () => {
   return (
     <View className="flex-row justify-between items-center">
       <View>
-        <Text className="font-medium text-gray-600">Olá,</Text>
+        <Text className="font-medium">Olá,</Text>
         <Text className="text-3xl">Johnson</Text>
       </View>
 
