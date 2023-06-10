@@ -7,8 +7,9 @@ export default function App() {
   return (
     <SafeAreaView className={`flex-1 mt-[24px]`}>
       <StatusBar style="auto" />
-      <Home />
-      <ScrollView className="flex-1"></ScrollView>
+      <ScrollView className="flex-1">
+        <Home />
+      </ScrollView>
     </SafeAreaView>
   )
 }
