@@ -17,9 +17,7 @@ export const CarouselImmobile = () => {
               key={id}
             >
               <Image
-                source={{
-                  uri: 'https://s2.glbimg.com/1M6NNB5hCbd0qGOEbCzyG9_nzzE=/smart/e.glbimg.com/og/ed/f/original/2021/08/04/apartamento-47-m-decoracao-pratica_6.jpg',
-                }}
+                source={require('../../../assets/images/apartamento.jpg')}
                 className="w-full h-32 object-cover"
               />
               <View className="px-2 pb-2 pt-1">
