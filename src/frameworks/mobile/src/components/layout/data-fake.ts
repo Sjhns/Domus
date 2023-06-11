@@ -47,7 +47,8 @@ export const properties = [
     title: 'Family Home',
     location: 'Quiet Neighborhood, Suburb',
     price: 1500,
-    image: 'https://blog.mendesortega.com.br/wp-content/uploads/2017/08/decoracao-imoveis-alto-padrao-940x711.jpeg',
+    image:
+      'https://blog.mendesortega.com.br/wp-content/uploads/2017/08/decoracao-imoveis-alto-padrao-940x711.jpeg',
     rooms: 3,
     squareMeters: 600,
     period: 'mês',
