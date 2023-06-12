@@ -1,16 +1,20 @@
-import { SaveImmobileDTOInput } from '../dtos/input-save-immobile'
-import { ImmobileOutput } from '../dtos/output-immobile'
+import { ImmobileRegistrationInput } from '../dtos/immobile-registration-input'
+import { ImmobileSchemaOutput } from '../dtos/immobile-schema-output'
 import { randomUUID } from 'crypto'
 import { ImmobileRepositoryContract } from '@/application/contracts/immobile-repository'
-import { SaveImmobileUseCaseContract } from '@/domain/contracts/immobile-services'
+import { ImmobileRegistrationUseCaseContract } from '@/domain/contracts/immobile-services'
 import { Immobile } from '@/domain/entities/immobile'
 
-export class SaveImmobileUseCase implements SaveImmobileUseCaseContract {
+export class ImmobileRegistrationUseCase
+  implements ImmobileRegistrationUseCaseContract
+{
   constructor(
     private readonly immobileRepository: ImmobileRepositoryContract,
   ) {}
 
-  async execute(input: SaveImmobileDTOInput): Promise<ImmobileOutput> {
+  async execute(
+    input: ImmobileRegistrationInput,
+  ): Promise<ImmobileSchemaOutput> {
     const schemaInput = {
       id: randomUUID(),
       createdAt: new Date().toISOString(),

@@ -1,10 +1,10 @@
 import { beforeAll, describe, expect, it } from 'vitest'
 import { ImmobileRepositoryMemory } from '../../infra/persistence/repositories/immobile-repository-memory'
-import { FindImmobileUseCase } from './find-immobile'
+import { ImmobileGetUseCase } from './immobile-get'
 
 describe('Find immobile use case', () => {
   const immobileRepositoryMemory = new ImmobileRepositoryMemory()
-  const findImmobileUseCase = new FindImmobileUseCase(immobileRepositoryMemory)
+  const immobileGetUseCase = new ImmobileGetUseCase(immobileRepositoryMemory)
 
   const immobileData = {
     id: '1',
@@ -40,7 +40,7 @@ describe('Find immobile use case', () => {
   })
 
   it('Should return all immobile', async () => {
-    const output = await findImmobileUseCase.all()
+    const output = await immobileGetUseCase.getAllImmobile()
 
     expect(output).toBeDefined()
     expect(output?.length).toBe(1)
@@ -48,7 +48,7 @@ describe('Find immobile use case', () => {
   })
 
   it('should return a specific immobile by ID', async () => {
-    const output = await findImmobileUseCase.one(immobileData.id)
+    const output = await immobileGetUseCase.getOneImmobile(immobileData.id)
 
     expect(output).toBeDefined()
     expect(output).toMatchObject(immobileData)
@@ -56,7 +56,7 @@ describe('Find immobile use case', () => {
   })
 
   it('should return undefined if immobile is not found', async () => {
-    const output = await findImmobileUseCase.one('3')
+    const output = await immobileGetUseCase.getOneImmobile('3')
 
     expect(output).toBeUndefined()
   })

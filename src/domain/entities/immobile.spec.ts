@@ -32,10 +32,10 @@ describe('Entity immobile test', () => {
       acceptsRoommates: true,
       maxRoommates: 2,
     }
-    const apartment = new Immobile(immobileData)
+    const immobile = new Immobile(immobileData)
 
-    expect(apartment).toBeInstanceOf(Immobile)
-    expect(apartment.props).toStrictEqual(immobileData)
+    expect(immobile).toBeInstanceOf(Immobile)
+    expect(immobile.props).toStrictEqual(immobileData)
   })
 
   it('should throw an error when invalid properties are passed', () => {

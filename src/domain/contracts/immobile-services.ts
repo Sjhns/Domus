@@ -1,11 +1,11 @@
-import { SaveImmobileDTOInput } from '@/application/dtos/input-save-immobile'
-import { ImmobileOutput } from '@/application/dtos/output-immobile'
+import { ImmobileRegistrationInput } from '@/application/dtos/immobile-registration-input'
+import { ImmobileSchemaOutput } from '@/application/dtos/immobile-schema-output'
 
-export interface SaveImmobileUseCaseContract {
-  execute: (input: SaveImmobileDTOInput) => Promise<ImmobileOutput>
+export interface ImmobileRegistrationUseCaseContract {
+  execute: (input: ImmobileRegistrationInput) => Promise<ImmobileSchemaOutput>
 }
 
-export interface FindImmobileUseCaseContract {
-  all: () => Promise<ImmobileOutput[] | void>
-  one: (id: string) => Promise<ImmobileOutput | void>
+export interface ImmobileGetUseCaseContract {
+  getAllImmobile: () => Promise<ImmobileSchemaOutput[] | void>
+  getOneImmobile: (id: string) => Promise<ImmobileSchemaOutput | void>
 }

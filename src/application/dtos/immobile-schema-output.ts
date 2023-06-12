@@ -1,4 +1,4 @@
-export type Location = {
+type Location = {
   zipCode: string
   state: string
   city: string
@@ -7,14 +7,14 @@ export type Location = {
   number: string
 }
 
-export type Landlord = {
+type Landlord = {
   name: string
   email: string
   phone: string
   occupation: string
 }
 
-export type ImmobileOutput = {
+export type ImmobileSchemaOutput = {
   id: string
   createdAt: string
   updatedAt: string

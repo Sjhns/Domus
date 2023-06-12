@@ -32,7 +32,7 @@ describe('Immobile repository memory', () => {
     acceptsRoommates: false,
   }
 
-  const immobileDataUpated = {
+  const immobileDataUpdated = {
     ...immobileData,
     acceptsRoommates: true,
     maxRoommates: 2,
@@ -61,7 +61,7 @@ describe('Immobile repository memory', () => {
   it('should update the immobile with the given ID', async () => {
     const output = await immobileRepositoryMemory.update(
       '1',
-      immobileDataUpated,
+      immobileDataUpdated,
     )
 
     expect(output).toBeDefined()
@@ -70,10 +70,12 @@ describe('Immobile repository memory', () => {
   })
 
   it('Should check if the immobile has been updated', async () => {
-    const output = await immobileRepositoryMemory.findOne(immobileDataUpated.id)
+    const output = await immobileRepositoryMemory.findOne(
+      immobileDataUpdated.id,
+    )
 
     expect(output).toBeDefined()
-    expect(output).toStrictEqual(immobileDataUpated)
+    expect(output).toStrictEqual(immobileDataUpdated)
   })
 
   it('should remove the immobile with the given ID from the database', async () => {

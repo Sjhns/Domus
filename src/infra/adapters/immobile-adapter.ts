@@ -1,43 +1,20 @@
 import { ImmobileModel } from '@/application/contracts/immobile-model'
 import {
-  ImmobileOutput,
   Landlord,
   Location,
-} from '@/application/dtos/output-immobile'
+} from '@/application/dtos/immobile-registration-input'
+import { ImmobileSchemaOutput } from '@/application/dtos/immobile-schema-output'
 
 export class ImmobileAdapter {
-  static adaptaArray(immobile: ImmobileModel[]): ImmobileOutput[] {
-    return immobile.map((immobile) => {
-      const location: Location = this.adaptAddress(immobile.location)
-      const landlord: Landlord = this.adaptLandlord(immobile.landlord)
-
-      const immobileOutput: ImmobileOutput = {
-        id: immobile.id,
-        createdAt: immobile.createdAt,
-        updatedAt: immobile.updatedAt,
-        images: immobile.images,
-        price: immobile.price,
-        landlord,
-        location,
-        type: immobile.type,
-        squareMeters: immobile.squareMeters,
-        bedrooms: immobile.bedrooms,
-        bathrooms: immobile.bathrooms,
-        parkingSpaces: immobile.parkingSpaces,
-        description: immobile.description,
-        acceptsRoommates: immobile.acceptsRoommates,
-        maxRoommates: immobile.maxRoommates,
-      }
-
-      return immobileOutput
-    })
+  static toDomainList(immobile: ImmobileModel[]): ImmobileSchemaOutput[] {
+    return immobile.map((immobile) => this.toDomain(immobile))
   }
 
-  static adaptaOne(immobile: ImmobileModel): ImmobileOutput {
+  static toDomain(immobile: ImmobileModel): ImmobileSchemaOutput {
     const location: Location = this.adaptAddress(immobile.location)
     const landlord: Landlord = this.adaptLandlord(immobile.landlord)
 
-    const immobileOutput: ImmobileOutput = {
+    return {
       id: immobile.id,
       createdAt: immobile.createdAt,
       updatedAt: immobile.updatedAt,
@@ -54,8 +31,6 @@ export class ImmobileAdapter {
       acceptsRoommates: immobile.acceptsRoommates,
       maxRoommates: immobile.maxRoommates,
     }
-
-    return immobileOutput
   }
 
   private static adaptAddress(location: Location): Location {

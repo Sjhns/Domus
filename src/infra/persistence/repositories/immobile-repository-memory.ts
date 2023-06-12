@@ -1,47 +1,47 @@
-import { SaveImmobileDTOInput } from '@/application/dtos/input-save-immobile'
+import { ImmobileRegistrationInput } from '@/application/dtos/immobile-registration-input'
 
 import { ImmobileRepositoryContract } from '@/application/contracts/immobile-repository'
 import { ImmobileModel } from '@/application/contracts/immobile-model'
-import { ImmobileOutput } from '@/application/dtos/output-immobile'
+import { ImmobileSchemaOutput } from '@/application/dtos/immobile-schema-output'
 import { ImmobileAdapter } from '@/infra/adapters/immobile-adapter'
 
 export class ImmobileRepositoryMemory implements ImmobileRepositoryContract {
   private database: ImmobileModel[] = []
 
-  async save(input: SaveImmobileDTOInput): Promise<ImmobileOutput> {
+  async save(input: ImmobileRegistrationInput): Promise<ImmobileSchemaOutput> {
     this.database.push(input)
-    return ImmobileAdapter.adaptaOne(input)
+    return ImmobileAdapter.toDomain(input)
   }
 
-  async findAll(): Promise<ImmobileOutput[] | void> {
+  async findAll(): Promise<ImmobileSchemaOutput[] | void> {
     const immobile = this.database
 
     if (!immobile) {
       return
     }
 
-    return ImmobileAdapter.adaptaArray(immobile)
+    return ImmobileAdapter.toDomainList(immobile)
   }
 
-  async findOne(id: string): Promise<ImmobileOutput | void> {
+  async findOne(id: string): Promise<ImmobileSchemaOutput | void> {
     const immobile = this.database.find((user) => user.id === id)
 
     if (!immobile) {
       return
     }
 
-    return ImmobileAdapter.adaptaOne(immobile)
+    return ImmobileAdapter.toDomain(immobile)
   }
 
   async update(
     id: string,
-    input: SaveImmobileDTOInput,
-  ): Promise<ImmobileOutput> {
+    input: ImmobileRegistrationInput,
+  ): Promise<ImmobileSchemaOutput> {
     const index = this.database.findIndex((immobile) => immobile.id === id)
 
     if (index !== -1) {
       this.database[index] = input
-      return ImmobileAdapter.adaptaOne(input)
+      return ImmobileAdapter.toDomain(input)
     }
   }
 

@@ -1,10 +1,12 @@
 import { describe, expect, it } from 'vitest'
-import { SaveImmobileUseCase } from './save-immobile'
+import { ImmobileRegistrationUseCase } from './immobile-registration'
 import { ImmobileRepositoryMemory } from '../../infra/persistence/repositories/immobile-repository-memory'
 
 describe('Save immobile use case', () => {
   const immobileRepositoryMemory = new ImmobileRepositoryMemory()
-  const saveImmobileUseCase = new SaveImmobileUseCase(immobileRepositoryMemory)
+  const immobileRegistrationUseCase = new ImmobileRegistrationUseCase(
+    immobileRepositoryMemory,
+  )
   const immobileData = {
     id: '1',
     createdAt: '2023-06-01',
@@ -35,7 +37,7 @@ describe('Save immobile use case', () => {
   }
 
   it('Should save an immobile not accepts roommates', async () => {
-    const output = await saveImmobileUseCase.execute(immobileData)
+    const output = await immobileRegistrationUseCase.execute(immobileData)
     expect(output.id).toBeDefined()
     expect(output.maxRoommates).toBeUndefined()
     expect(output).toBeDefined()
@@ -47,7 +49,7 @@ describe('Save immobile use case', () => {
       maxRoommates: 2,
     }
 
-    const output = await saveImmobileUseCase.execute(
+    const output = await immobileRegistrationUseCase.execute(
       immobileDataAcceptsRoommates,
     )
     expect(output.id).toBeDefined()
