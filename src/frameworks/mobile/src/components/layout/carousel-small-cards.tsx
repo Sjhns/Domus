@@ -5,7 +5,7 @@ import { properties } from './data-fake'
 
 export const CarouselSmallCards = () => {
   return (
-    <View className="">
+    <View>
       <View className="mb-2">
         <Text className="text-2xl font-normal">Os mais pertos de você</Text>
       </View>

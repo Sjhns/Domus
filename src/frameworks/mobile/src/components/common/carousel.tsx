@@ -6,14 +6,18 @@ type CarouselProps<ItemT> = {
   spaceEachItem: number
 }
 
-export const Carousel = <T,>({ data, renderItem,spaceEachItem }: CarouselProps<T>) => {
+export const Carousel = <T,>({
+  data,
+  renderItem,
+  spaceEachItem,
+}: CarouselProps<T>) => {
   return (
     <FlatList
       horizontal
       showsHorizontalScrollIndicator={false}
       snapToAlignment="center"
       data={data}
-      ItemSeparatorComponent={() => <View style={{width: spaceEachItem}} />}
+      ItemSeparatorComponent={() => <View style={{ width: spaceEachItem }} />}
       renderItem={renderItem}
     ></FlatList>
   )

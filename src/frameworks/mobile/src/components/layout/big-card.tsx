@@ -1,8 +1,6 @@
-import { Image, View, Text, Dimensions } from 'react-native'
+import { Image, View, Text } from 'react-native'
 import { FontAwesome, Ionicons } from '@expo/vector-icons'
 import { Price } from '../common/price'
-
-const screenWidth = Dimensions.get('window').width
 
 type BigCardProps = {
   title: string
@@ -25,9 +23,8 @@ export const BigCard = ({
 }: BigCardProps) => {
   return (
     <View
-      className="h-52 bg-white rounded-xl overflow-hidden  flex-row shadow-lg 
-      border border-[#a4a1a13f] "
-      style={{ width: screenWidth * 0.9 }}
+      className="h-52 bg-white rounded-md overflow-hidden flex-row shadow-lg 
+      border border-[#a4a1a13f]"
     >
       <View className="w-28 h-full">
         <Image
@@ -40,14 +37,14 @@ export const BigCard = ({
 
       <View className="p-3">
         <View className="flex-row items-center space-x-1">
-          <FontAwesome name="star" size={17} color={'#FFBF75'} className="" />
+          <FontAwesome name="star" size={17} color={'#FFBF75'} />
           <View className="flex-row">
             <Text>4.3</Text>
             <Text className="ml-1 text-gray-500">(73)</Text>
           </View>
         </View>
 
-        <View className="my-3 w-56">
+        <View className="my-3 w-52">
           <Text
             numberOfLines={2}
             ellipsizeMode="tail"
@@ -63,14 +60,13 @@ export const BigCard = ({
           </View>
         </View>
 
-        <View className="flex-row items-center space-x-3 my-2">
+        <View className="flex-row items-center space-x-5 my-2">
           <View className="flex-row space-x-2 items-center">
-            <FontAwesome name="bed" size={17} color={'#7D7F88'} className="" />
-
+            <FontAwesome name="bed" size={17} color={'#7D7F88'} />
             <Text>{rooms} quartos</Text>
           </View>
           <View className="flex-row space-x-2 items-center">
-            <FontAwesome name="home" size={17} color={'#7D7F88'} className="" />
+            <FontAwesome name="home" size={17} color={'#7D7F88'} />
             <Text>{squareMeters} m²</Text>
           </View>
         </View>

@@ -16,7 +16,7 @@ export const BarOptions = () => {
 const Option = ({ text, icone }: { text: string; icone: any }) => {
   return (
     <View className="flex-row justify-center items-center gap-x-1 border px-4 py-2 rounded-md">
-      <Feather name={icone} className="" size={16} />
+      <Feather name={icone} size={16} />
       <Text className="text-base">{text}</Text>
     </View>
   )

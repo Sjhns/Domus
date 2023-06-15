@@ -13,7 +13,7 @@ export const CarouselBigCards = () => {
 
       <Carousel
         data={properties}
-        spaceEachItem={10}
+        spaceEachItem={8}
         renderItem={({ item }) => <BigCard {...item} />}
       />
     </View>

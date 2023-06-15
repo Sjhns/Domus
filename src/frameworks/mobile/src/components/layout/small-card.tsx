@@ -48,14 +48,13 @@ export const SmallCard = ({
           </Text>
         </View>
 
-        <View className="flex-row items-center space-x-3 my-2">
+        <View className="flex-row items-center space-x-3 my-4">
           <View className="flex-row space-x-2 items-center">
-            <FontAwesome name="bed" size={17} color={'#7D7F88'} className="" />
-
+            <FontAwesome name="bed" size={17} color={'#7D7F88'} />
             <Text>{rooms} quartos</Text>
           </View>
           <View className="flex-row space-x-2 items-center">
-            <FontAwesome name="home" size={17} color={'#7D7F88'} className="" />
+            <FontAwesome name="home" size={17} color={'#7D7F88'} />
             <Text>{squareMeters} m²</Text>
           </View>
         </View>
