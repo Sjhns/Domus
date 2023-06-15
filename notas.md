@@ -116,3 +116,4 @@ enum TypeImmobile {
 }
 
 ```
+https://aboutreact.com/react-native-vector-icons/ - todas as libs de icones do react native expo
