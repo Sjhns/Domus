@@ -1,6 +1,7 @@
 import { Image, Text, View } from 'react-native'
 import { Ionicons, FontAwesome } from '@expo/vector-icons'
 import { Price } from '../common/price'
+import { RoomAndSizeDetails } from '../common/room-and-size-details'
 
 type SmallCardProps = {
   title: string
@@ -48,16 +49,7 @@ export const SmallCard = ({
           </Text>
         </View>
 
-        <View className="flex-row items-center space-x-3 my-4">
-          <View className="flex-row space-x-2 items-center">
-            <FontAwesome name="bed" size={17} color={'#7D7F88'} />
-            <Text>{rooms} quartos</Text>
-          </View>
-          <View className="flex-row space-x-2 items-center">
-            <FontAwesome name="home" size={17} color={'#7D7F88'} />
-            <Text>{squareMeters} m²</Text>
-          </View>
-        </View>
+        <RoomAndSizeDetails my={4} rooms={rooms} squareMeters={squareMeters} />
 
         <Price price={price} period={period} />
       </View>

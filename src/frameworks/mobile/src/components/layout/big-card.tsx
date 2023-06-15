@@ -1,6 +1,7 @@
 import { Image, View, Text } from 'react-native'
 import { FontAwesome, Ionicons } from '@expo/vector-icons'
 import { Price } from '../common/price'
+import { RoomAndSizeDetails } from '../common/room-and-size-details'
 
 type BigCardProps = {
   title: string
@@ -60,16 +61,7 @@ export const BigCard = ({
           </View>
         </View>
 
-        <View className="flex-row items-center space-x-5 my-2">
-          <View className="flex-row space-x-2 items-center">
-            <FontAwesome name="bed" size={17} color={'#7D7F88'} />
-            <Text>{rooms} quartos</Text>
-          </View>
-          <View className="flex-row space-x-2 items-center">
-            <FontAwesome name="home" size={17} color={'#7D7F88'} />
-            <Text>{squareMeters} m²</Text>
-          </View>
-        </View>
+        <RoomAndSizeDetails my={2} rooms={rooms} squareMeters={squareMeters} />
 
         <Price price={price} period={period} />
       </View>
