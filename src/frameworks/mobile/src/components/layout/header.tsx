@@ -32,7 +32,7 @@ export const Header = () => {
         </Text>
 
         <View
-          className="bg-[#F2F2F3] border-[.8px] border-[#E3E3E7] h-[63px]
+          className="bg-[#F2F2F3] border-[.8px] border-[#E3E3E7] h-[59px]
           overflow-hidden px-2 py-[5px] rounded-full flex-row items-center 
           justify-between space-x-1"
         >
