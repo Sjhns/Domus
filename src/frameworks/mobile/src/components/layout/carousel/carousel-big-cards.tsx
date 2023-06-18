@@ -1,14 +1,15 @@
-import { View, Text } from 'react-native'
+import { View } from 'react-native'
 
 import { Carousel } from '../../common/carousel'
 import { properties } from '../data-fake'
 import { BigCard } from './big-card'
+import { Title } from '../../common/title'
 
 export const CarouselBigCards = () => {
   return (
-    <View>
-      <View className="mt-5 mb-3">
-        <Text className="text-xl font-medium">As escolhas mais procuradas</Text>
+    <View className="mt-6">
+      <View className="mb-2">
+        <Title title="Os mais procurados" />
       </View>
 
       <Carousel

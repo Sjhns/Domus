@@ -11,8 +11,12 @@ export const Home = () => {
         showsHorizontalScrollIndicator={false}
       >
         <Header />
+
         <CarouselSmallCards />
         <CarouselBigCards />
+        <CarouselSmallCards />
+        <CarouselBigCards />
+
         <View className="mt-28" />
       </ScrollView>
     </SafeAreaView>

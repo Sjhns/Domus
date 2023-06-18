@@ -1,5 +1,5 @@
 import { Image, Text, View } from 'react-native'
-import { Ionicons, FontAwesome } from '@expo/vector-icons'
+import { Ionicons } from '@expo/vector-icons'
 import { Price } from '../../common/price'
 import { RoomAndSizeDetails } from '../../common/room-and-size-details'
 
@@ -27,12 +27,15 @@ export const SmallCard = ({
       className="w-[220px] h-min rounded-md overflow-hidden shadow-lg border 
     border-[#a4a1a13f] pb-1 bg-white"
     >
-      <Image
-        source={{
-          uri: image,
-        }}
-        className="w-full h-32 object-cover"
-      />
+      <View className="h-32">
+        <Image
+          source={{
+            uri: image,
+          }}
+          className=" w-full h-full object-cover"
+        />
+      </View>
+
       <View className="px-2 pb-2 pt-1">
         <Text className="text-lg leading-6 text-[#1A1E25] font-medium">
           {title}

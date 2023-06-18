@@ -45,7 +45,7 @@ export const BigCard = ({
           </View>
         </View>
 
-        <View className="my-3 w-52">
+        <View className="my-3 mb-6 w-52">
           <Text
             numberOfLines={2}
             ellipsizeMode="tail"
