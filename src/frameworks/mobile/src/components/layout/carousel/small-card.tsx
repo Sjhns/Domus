@@ -34,7 +34,7 @@ export const SmallCard = ({
         className="w-full h-32 object-cover"
       />
       <View className="px-2 pb-2 pt-1">
-        <Text className="text-lg leading-7 text-[#1A1E25] font-medium">
+        <Text className="text-lg leading-6 text-[#1A1E25] font-medium">
           {title}
         </Text>
 
@@ -49,14 +49,9 @@ export const SmallCard = ({
           </Text>
         </View>
 
-        <View className='pt-3'>
-
         <RoomAndSizeDetails my={4} rooms={rooms} squareMeters={squareMeters} />
-        </View>
 
-        <View className='pt-5'>
-          <Price price={price} period={period} />
-        </View>
+        <Price price={price} period={period} />
       </View>
     </View>
   )
