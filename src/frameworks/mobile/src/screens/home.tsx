@@ -1,6 +1,6 @@
 import { SafeAreaView, ScrollView, Text, View } from 'react-native'
-import { CarouselSmallCards } from '../components/layout/carousel-small-cards'
-import { CarouselBigCards } from '../components/layout/carousel-big-cards'
+import { CarouselSmallCards } from '../components/layout/carousel/carousel-small-cards'
+import { CarouselBigCards } from '../components/layout/carousel/carousel-big-cards'
 import { Header } from '../components/layout/header'
 
 export const Home = () => {

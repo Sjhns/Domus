@@ -1,7 +1,7 @@
 import { Image, Text, View } from 'react-native'
 import { Ionicons, FontAwesome } from '@expo/vector-icons'
-import { Price } from '../common/price'
-import { RoomAndSizeDetails } from '../common/room-and-size-details'
+import { Price } from '../../common/price'
+import { RoomAndSizeDetails } from '../../common/room-and-size-details'
 
 type SmallCardProps = {
   title: string

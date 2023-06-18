@@ -1,7 +1,7 @@
 import { View, Text } from 'react-native'
 
-import { Carousel } from '../common/carousel'
-import { properties } from './data-fake'
+import { Carousel } from '../../common/carousel'
+import { properties } from '../data-fake'
 import { BigCard } from './big-card'
 
 export const CarouselBigCards = () => {

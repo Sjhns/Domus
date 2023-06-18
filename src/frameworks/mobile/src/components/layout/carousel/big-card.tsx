@@ -1,7 +1,7 @@
 import { Image, View, Text } from 'react-native'
 import { FontAwesome, Ionicons } from '@expo/vector-icons'
-import { Price } from '../common/price'
-import { RoomAndSizeDetails } from '../common/room-and-size-details'
+import { Price } from '../../common/price'
+import { RoomAndSizeDetails } from '../../common/room-and-size-details'
 
 type BigCardProps = {
   title: string
