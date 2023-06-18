@@ -8,7 +8,7 @@ type PriceProps = {
 
 export const Price = ({ period, price }: PriceProps) => {
   return (
-    <View className="flex-row items-center justify-between mt-auto pt-1">
+    <View className="flex-row items-center justify-between mt-auto">
       <View className="flex-row items-center">
         <Text className="text-[#1A1E25] text-xl tracking-widest font-semibold ">
           R${price}
