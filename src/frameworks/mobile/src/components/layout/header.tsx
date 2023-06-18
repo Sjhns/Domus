@@ -4,7 +4,7 @@ import { SearchInput } from '../common/search-input'
 
 export const Header = () => {
   return (
-    <View className="space-y-6 mt-3 mb-9"> 
+    <View className="space-y-6 mt-3 mb-5"> 
       <View>
         <Text className="text-[#7D7F88] text-sm tracking-wider mb-1">
           Find your place in
