@@ -12,7 +12,7 @@ type SmallImmobileCardProps = {
   rooms: number
   squareMeters: number
   period: string
-}  
+}
 
 export const SmallImmobileCard = ({
   image,
@@ -53,7 +53,11 @@ export const SmallImmobileCard = ({
           </Text>
         </View>
 
-        <ImmobileRoomAndSizeDetails my={4} rooms={rooms} squareMeters={squareMeters} />
+        <ImmobileRoomAndSizeDetails
+          my={10}
+          rooms={rooms}
+          squareMeters={squareMeters}
+        />
 
         <ImmobilePrice price={price} period={period} />
       </View>
