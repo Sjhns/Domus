@@ -13,7 +13,13 @@ export const ImmobileRoomAndSizeDetails = ({
   squareMeters,
 }: ImmobileRoomAndSizeDetailsProps) => {
   return (
-    <View className={`flex-row items-center space-x-5 my-${my}`}>
+    <View
+      className="flex-row items-center space-x-5"
+      style={{
+        marginTop: my,
+        marginBottom: my,
+      }}
+    >
       <View className="flex-row space-x-2 items-center">
         <FontAwesome name="bed" size={17} color={'#7D7F88'} />
         <Text>{rooms} quartos</Text>
