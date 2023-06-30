@@ -1,10 +1,10 @@
 import { View, Text } from 'react-native'
 
-type TitleProps = {
+type CarouselTitleProps = {
   title: string
 }
 
-export const Title = ({ title }: TitleProps) => {
+export const CarouselTitle = ({ title }: CarouselTitleProps) => {
   return (
     <View className="flex-row items-center justify-between">
       <Text className="text-[19px] text-[#1A1E25] tracking-[.208px] font-semibold">

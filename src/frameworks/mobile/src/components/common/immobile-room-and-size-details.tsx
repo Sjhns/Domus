@@ -1,17 +1,17 @@
 import { Text, View } from 'react-native'
 import { FontAwesome } from '@expo/vector-icons'
 
-type ImmobileDetailsProps = {
+type ImmobileRoomAndSizeDetailsProps = {
   rooms: number
   squareMeters: number
-  my: number
+  my?: number
 }
 
-export const RoomAndSizeDetails = ({
-  my,
+export const ImmobileRoomAndSizeDetails = ({
+  my = 2,
   rooms,
   squareMeters,
-}: ImmobileDetailsProps) => {
+}: ImmobileRoomAndSizeDetailsProps) => {
   return (
     <View className={`flex-row items-center space-x-5 my-${my}`}>
       <View className="flex-row space-x-2 items-center">

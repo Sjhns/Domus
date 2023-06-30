@@ -1,10 +1,22 @@
-import { Text, View, Pressable } from 'react-native'
+import { Text, View, TouchableOpacity } from 'react-native'
 import { MaterialIcons } from '@expo/vector-icons'
 import { SearchInput } from '../common/search-input'
 
-export const Header = () => {
+type HeaderProps = {
+  userCurrentLocation: string
+}
+
+export const Header = ({ userCurrentLocation }: HeaderProps) => {
+  const handleRentPress = () => {
+    console.log('I need to rent pressed')
+  }
+
+  const handleBuyPress = () => {
+    console.log('I need to buy pressed')
+  }
+
   return (
-    <View className="space-y-6 my-3"> 
+    <View className="space-y-6 my-3">
       <View>
         <Text className="text-[#7D7F88] text-sm tracking-wider mb-1">
           Find your place in
@@ -16,7 +28,7 @@ export const Header = () => {
 
           <View className="flex-row items-center justify-center space-x-3">
             <Text className="text-[#1A1E25] font-semibold text-2xl">
-              Surabaya, Indonesia
+              {userCurrentLocation}
             </Text>
           </View>
         </View>
@@ -36,8 +48,8 @@ export const Header = () => {
           overflow-hidden px-2 py-[5px] rounded-full flex-row items-center 
           justify-between space-x-1"
         >
-          <Pressable
-            onPress={() => console.log('pressed')}
+          <TouchableOpacity
+            onPress={handleRentPress}
             className="bg-[#6246EA] shadow-lg h-full flex-1 rounded-full items-center
             justify-center
           "
@@ -45,16 +57,17 @@ export const Header = () => {
             <Text className="text-[#FDFDFD] tracking-widest font-medium text-base">
               I need to rent
             </Text>
-          </Pressable>
+          </TouchableOpacity>
 
-          <Pressable
+          <TouchableOpacity
+            onPress={handleBuyPress}
             className="bg-transparent h-full flex-1 rounded-full 
             items-center justify-center"
           >
             <Text className="text-[#7D7F88] tracking-tighter text-base">
               I need to buy
             </Text>
-          </Pressable>
+          </TouchableOpacity>
         </View>
       </View>
     </View>

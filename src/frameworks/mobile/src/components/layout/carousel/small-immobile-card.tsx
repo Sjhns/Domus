@@ -1,9 +1,10 @@
-import { Image, Text, View } from 'react-native'
 import { Ionicons } from '@expo/vector-icons'
-import { Price } from '../../common/price'
-import { RoomAndSizeDetails } from '../../common/room-and-size-details'
+import { Image, Text, View } from 'react-native'
 
-type SmallCardProps = {
+import { ImmobilePrice } from '../../common/immobile-price'
+import { ImmobileRoomAndSizeDetails } from '../../common/immobile-room-and-size-details'
+
+type SmallImmobileCardProps = {
   title: string
   location: string
   price: number
@@ -11,9 +12,9 @@ type SmallCardProps = {
   rooms: number
   squareMeters: number
   period: string
-}
+}  
 
-export const SmallCard = ({
+export const SmallImmobileCard = ({
   image,
   location,
   price,
@@ -21,7 +22,7 @@ export const SmallCard = ({
   squareMeters,
   title,
   period,
-}: SmallCardProps) => {
+}: SmallImmobileCardProps) => {
   return (
     <View
       className="w-[220px] h-min rounded-md overflow-hidden shadow-lg border 
@@ -52,9 +53,9 @@ export const SmallCard = ({
           </Text>
         </View>
 
-        <RoomAndSizeDetails my={4} rooms={rooms} squareMeters={squareMeters} />
+        <ImmobileRoomAndSizeDetails my={4} rooms={rooms} squareMeters={squareMeters} />
 
-        <Price price={price} period={period} />
+        <ImmobilePrice price={price} period={period} />
       </View>
     </View>
   )

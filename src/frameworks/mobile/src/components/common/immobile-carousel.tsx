@@ -1,16 +1,16 @@
 import { FlatList, ListRenderItem, View } from 'react-native'
 
-type CarouselProps<ItemT> = {
+type ImmobileCarouselProps<ItemT> = {
   data: ItemT[]
   renderItem: ListRenderItem<ItemT>
   spaceEachItem: number
 }
 
-export const Carousel = <T,>({
+export const ImmobileCarousel = <T,>({
   data,
   renderItem,
   spaceEachItem,
-}: CarouselProps<T>) => {
+}: ImmobileCarouselProps<T>) => {
   return (
     <FlatList
       horizontal

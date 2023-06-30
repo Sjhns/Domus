@@ -1,12 +1,12 @@
 import { Text, View } from 'react-native'
 import { Ionicons } from '@expo/vector-icons'
 
-type PriceProps = {
+type ImmobilePriceProps = {
   price: number
   period: string
 }
 
-export const Price = ({ period, price }: PriceProps) => {
+export const ImmobilePrice = ({ period, price }: ImmobilePriceProps) => {
   return (
     <View className="flex-row items-center justify-between mt-auto">
       <View className="flex-row items-center">

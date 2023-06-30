@@ -1,21 +1,22 @@
-import { SafeAreaView, ScrollView, Text, View } from 'react-native'
-import { CarouselSmallCards } from '../components/layout/carousel/carousel-small-cards'
-import { CarouselBigCards } from '../components/layout/carousel/carousel-big-cards'
+import { SafeAreaView, ScrollView, View } from 'react-native'
+
 import { Header } from '../components/layout/header'
+import { NearbyImmobileCarousel } from '../components/layout/carousel/nearby-immobile-carousel'
+import { MostSearchedImmobileCarousel } from '../components/layout/carousel/most-searched-immobile-carousel'
 
 export const Home = () => {
   return (
-    <SafeAreaView className="flex-1 px-3 pt-3 ">
+    <SafeAreaView className="flex-1 px-3 pt-3">
       <ScrollView
         showsVerticalScrollIndicator={false}
         showsHorizontalScrollIndicator={false}
       >
-        <Header />
+        <Header userCurrentLocation="Surabaya, Indonesia" />
 
-        <CarouselSmallCards />
-        <CarouselBigCards />
-        <CarouselSmallCards />
-        <CarouselBigCards />
+        <NearbyImmobileCarousel key="nearby-carousel-1" />
+        <MostSearchedImmobileCarousel key="most-searched-carousel-1" />
+        <NearbyImmobileCarousel key="nearby-carousel-2" />
+        <MostSearchedImmobileCarousel key="most-searched-carousel-2" />
 
         <View className="mt-28" />
       </ScrollView>

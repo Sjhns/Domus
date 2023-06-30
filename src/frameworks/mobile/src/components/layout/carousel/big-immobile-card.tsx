@@ -1,9 +1,9 @@
 import { Image, View, Text } from 'react-native'
 import { FontAwesome, Ionicons } from '@expo/vector-icons'
-import { Price } from '../../common/price'
-import { RoomAndSizeDetails } from '../../common/room-and-size-details'
+import { ImmobilePrice } from '../../common/immobile-price'
+import { ImmobileRoomAndSizeDetails } from '../../common/immobile-room-and-size-details'
 
-type BigCardProps = {
+type BigImmobileCardProps = {
   title: string
   location: string
   price: number
@@ -13,7 +13,7 @@ type BigCardProps = {
   period: string
 }
 
-export const BigCard = ({
+export const BigImmobileCard = ({
   image,
   location,
   period,
@@ -21,7 +21,7 @@ export const BigCard = ({
   rooms,
   squareMeters,
   title,
-}: BigCardProps) => {
+}: BigImmobileCardProps) => {
   return (
     <View
       className="h-52 bg-white rounded-md overflow-hidden flex-row shadow-lg 
@@ -61,9 +61,9 @@ export const BigCard = ({
           </View>
         </View>
 
-        <RoomAndSizeDetails my={2} rooms={rooms} squareMeters={squareMeters} />
+        <ImmobileRoomAndSizeDetails rooms={rooms} squareMeters={squareMeters} />
 
-        <Price price={price} period={period} />
+        <ImmobilePrice price={price} period={period} />
       </View>
     </View>
   )
