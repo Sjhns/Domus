@@ -3,6 +3,7 @@ import { SafeAreaView, ScrollView, View } from 'react-native'
 import { Header } from '../components/layout/header'
 import { NearbyImmobileCarousel } from '../components/layout/carousel/nearby-immobile-carousel'
 import { MostSearchedImmobileCarousel } from '../components/layout/carousel/most-searched-immobile-carousel'
+import { ArticlesSection } from '../components/layout/articles-section'
 
 export const Home = () => {
   return (
@@ -17,6 +18,8 @@ export const Home = () => {
         <MostSearchedImmobileCarousel key="most-searched-carousel-1" />
         <NearbyImmobileCarousel key="nearby-carousel-2" />
         <MostSearchedImmobileCarousel key="most-searched-carousel-2" />
+
+        <ArticlesSection />
 
         <View className="mt-28" />
       </ScrollView>
