@@ -4,6 +4,7 @@ import { Header } from '../components/layout/header'
 import { NearbyCarousel } from '../components/layout/carousel/nearby-immobile-carousel'
 import { MostSearchedCarousel } from '../components/layout/carousel/most-searched-immobile-carousel'
 import { ArticlesSection } from '../components/layout/articles-section'
+import { PresentationCard } from '../components/layout/presentation-card'
 
 export const Home = () => {
   return (
@@ -21,7 +22,8 @@ export const Home = () => {
 
         <ArticlesSection />
 
-        <View className="mt-28" />
+        <PresentationCard />
+        <View className="mt-12" />
       </ScrollView>
     </SafeAreaView>
   )
