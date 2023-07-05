@@ -13,9 +13,13 @@ export const ArticlesSection = () => {
         <Article key={id} />
       ))}
 
-      <TouchableOpacity className="bg-[#6246ea1a] w-full mt-5 
-      py-[15px] justify-center items-center  rounded-[54px] overflow-hidden border border-[#5839f1]">
-        <Text className="text-base font-semibold text-[#6246EA]">Read more articles</Text>
+      <TouchableOpacity
+        className="bg-[#6246ea1a] w-full mt-5 
+      py-[15px] justify-center items-center  rounded-[54px] overflow-hidden border border-[#5839f1]"
+      >
+        <Text className="text-base font-semibold text-[#6246EA]">
+          Read more articles
+        </Text>
       </TouchableOpacity>
     </View>
   )
@@ -67,6 +71,3 @@ const Article = () => {
     </View>
   )
 }
-
-
-// 
