@@ -1,6 +1,6 @@
 import { Image, View, Text } from 'react-native'
 import { FontAwesome, Ionicons } from '@expo/vector-icons'
-import { ImmobilePrice } from '../../common/immobile-price'
+import { PriceWithFavoriteButton } from '../../common/price-with-favorite-button'
 import { ImmobileRoomAndSizeDetails } from '../../common/immobile-room-and-size-details'
 
 type BigImmobileCardProps = {
@@ -63,7 +63,7 @@ export const BigImmobileCard = ({
 
         <ImmobileRoomAndSizeDetails rooms={rooms} squareMeters={squareMeters} />
 
-        <ImmobilePrice price={price} period={period} />
+        <PriceWithFavoriteButton price={price} period={period} />
       </View>
     </View>
   )

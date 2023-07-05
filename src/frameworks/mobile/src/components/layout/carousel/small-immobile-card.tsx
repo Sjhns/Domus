@@ -1,7 +1,7 @@
 import { Ionicons } from '@expo/vector-icons'
 import { Image, Text, View } from 'react-native'
 
-import { ImmobilePrice } from '../../common/immobile-price'
+import { PriceWithFavoriteButton } from '../../common/price-with-favorite-button'
 import { ImmobileRoomAndSizeDetails } from '../../common/immobile-room-and-size-details'
 
 type SmallImmobileCardProps = {
@@ -59,7 +59,7 @@ export const SmallImmobileCard = ({
           squareMeters={squareMeters}
         />
 
-        <ImmobilePrice price={price} period={period} />
+        <PriceWithFavoriteButton price={price} period={period} />
       </View>
     </View>
   )
