@@ -1,4 +1,4 @@
-import { Image, Text, View, TouchableOpacity, FlatList } from 'react-native'
+import { Image, Text, View, TouchableOpacity } from 'react-native'
 import { Ionicons } from '@expo/vector-icons'
 
 export const ArticlesSection = () => {
@@ -12,6 +12,11 @@ export const ArticlesSection = () => {
       {data.map((id) => (
         <Article key={id} />
       ))}
+
+      <TouchableOpacity className="bg-[#6246ea1a] w-full mt-5 
+      py-[15px] justify-center items-center  rounded-[54px] overflow-hidden border border-[#5839f1]">
+        <Text className="text-base font-semibold text-[#6246EA]">Read more articles</Text>
+      </TouchableOpacity>
     </View>
   )
 }
@@ -32,7 +37,7 @@ const Article = () => {
       </View>
 
       <View className="px-4 pb-4">
-        <View className="flex-row items-center justify-between pt-[3px] pb-[1px]">
+        <View className="flex-row items-center justify-between pt-[8px] pb-[1px]">
           <Text className="text-[#868686] font-normal">
             Saturday, November 10, 2021
           </Text>
@@ -54,7 +59,7 @@ const Article = () => {
         </Text>
 
         <TouchableOpacity className="w-[120px] mt-6 p-[9px] justify-center items-center bg-[#6246ea1a] rounded-[36px] overflow-hidden">
-          <Text className="text-[#6246EA] text-[14px] font-semibold tracking-[0.26px]">
+          <Text className="text-[#6246EA] text-[14.05px] font-semibold tracking-[0.26px]">
             Read more
           </Text>
         </TouchableOpacity>
@@ -62,3 +67,6 @@ const Article = () => {
     </View>
   )
 }
+
+
+// 
