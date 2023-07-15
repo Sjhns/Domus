@@ -23,7 +23,7 @@ export const Home = () => {
         <ArticlesSection />
 
         <PresentationCard />
-        <View className="mt-12" />
+        <View style={{ height: 100 }} />
       </ScrollView>
     </SafeAreaView>
   )

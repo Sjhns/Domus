@@ -1,7 +1,7 @@
 import { View, Text, Image, TouchableOpacity } from 'react-native'
 
 export const PresentationCard = () => (
-  <View className="mt-10 flex-row overflow-hidden rounded-xl shadow-md border-[.8px] border-[#0f0f0f42]">
+  <View className="mt-5 flex-row overflow-hidden rounded-xl shadow-md border-[.8px] border-[#0f0f0f42]">
     <View className="flex-1 p-4 bg-[#6c51f5]">
       <Text className="text-[#FFF] text-xl font-semibold tracking-[0.2px]">
         Quer alugar ou vender sua propriedade?
