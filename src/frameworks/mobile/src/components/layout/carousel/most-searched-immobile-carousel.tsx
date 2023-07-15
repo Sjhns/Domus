@@ -1,7 +1,7 @@
 import { View } from 'react-native'
 
 import { Carousel } from '../../common/immobile-carousel'
-import { properties } from '../data-fake'
+import { properties } from '../../../mocks/data-fake'
 import { BigImmobileCard } from './big-immobile-card'
 import { CarouselTitle } from '../../common/carousel-title'
 

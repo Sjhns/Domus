@@ -2,7 +2,7 @@ import { View } from 'react-native'
 
 import { Carousel } from '../../common/immobile-carousel'
 import { SmallImmobileCard } from './small-immobile-card'
-import { properties } from '../data-fake'
+import { properties } from '../../../mocks/data-fake'
 import { CarouselTitle } from '../../common/carousel-title'
 
 export const NearbyCarousel = () => {
