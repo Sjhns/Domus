@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
+
 import { createAnimations } from '@tamagui/animations-react-native'
 
 import { createInterFont } from '@tamagui/font-inter'
@@ -105,7 +107,7 @@ const config = createTamagui({
 export type AppConfig = typeof config
 
 declare module 'tamagui' {
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   interface TamaguiCustomConfig extends AppConfig {}
 }
+
 export default config
