@@ -22,8 +22,6 @@ export const Header = ({ userCurrentLocation }: HeaderProps) => {
           Find your place in
         </Text>
         <View className="flex-row items-center">
-          {/* <Octicons name="location" size={25} color={'#6246EA'} />  */}
-
           <MaterialIcons name="location-on" size={30} color={'#6246EA'} />
 
           <View className="flex-row items-center justify-center space-x-3">
