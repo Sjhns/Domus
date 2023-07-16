@@ -1,5 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
-
 import { createAnimations } from '@tamagui/animations-react-native'
 
 import { createInterFont } from '@tamagui/font-inter'
