@@ -1,4 +1,4 @@
-import { SafeAreaView, ScrollView, View } from 'react-native'
+import { ScrollView, View } from 'react-native'
 
 import { Header } from '../components/layout/header'
 import { NearbyCarousel } from '../components/layout/carousel/nearby-immobile-carousel'
@@ -8,7 +8,7 @@ import { PresentationCard } from '../components/layout/presentation-card'
 
 export const Home = () => {
   return (
-    <SafeAreaView className="flex-1 px-3 pt-3">
+    <View className="flex-1 px-3 pt-3">
       <ScrollView
         showsVerticalScrollIndicator={false}
         showsHorizontalScrollIndicator={false}
@@ -25,6 +25,6 @@ export const Home = () => {
         <PresentationCard />
         <View style={{ height: 100 }} />
       </ScrollView>
-    </SafeAreaView>
+    </View>
   )
 }
