@@ -1,4 +1,4 @@
-import { View, ScrollView, Text, Image } from 'react-native'
+import { View, ScrollView, Text } from 'react-native'
 import { ProfileMenu } from '../components/layout/profile-menu'
 import { Divider } from '../components/common/divisor'
 import { ProfileMenuOption } from '../components/common/profile-menu-option'
