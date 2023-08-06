@@ -1,18 +1,29 @@
 {
-  "private": true,
+  "name": "app",
+  "version": "1.0.0",
+  "main": "node_modules/expo/AppEntry.js",
   "scripts": {
-    "build": "turbo run build",
-    "dev": "turbo run dev",
-    "lint": "turbo run lint",
-    "format": "prettier --write \"**/*.{ts,tsx,md}\""
+    "start": "expo start",
+    "android": "expo start --android",
+    "ios": "expo start --ios",
+    "web": "expo start --web",
+    "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
+    "lint:fix": "eslint . --ext .js,.jsx,.ts,.tsx --fix"
+  },
+  "dependencies": {
+    "expo": "~49.0.5",
+    "expo-status-bar": "~1.6.0",
+    "nativewind": "^2.0.11",
+    "react": "18.2.0",
+    "react-native": "0.72.3",
+    "tailwindcss": "^3.3.2"
   },
   "devDependencies": {
-    "@turbo/gen": "^1.9.7",
-    "eslint": "^7.32.0",
-    "eslint-config-custom": "workspace:*",
-    "prettier": "^2.5.1",
-    "turbo": "latest"
+    "@babel/core": "^7.20.0",
+    "@rocketseat/eslint-config": "^2.1.0",
+    "@types/react": "~18.0.14",
+    "eslint": "^8.46.0",
+    "typescript": "^5.1.3"
   },
-  "packageManager": "pnpm@8.6.10",
-  "name": "app"
+  "private": true
 }
