@@ -4,6 +4,7 @@ import { NavigationContainer } from '@react-navigation/native'
 import { Feather, Entypo } from '@expo/vector-icons'
 import { Profile } from '../../screens/profile'
 import { Saved } from '../../screens/saved'
+import { Home } from '../../screens/home'
 
 const Tab = createBottomTabNavigator()
 
@@ -44,7 +45,7 @@ export const Navigator = () => {
       >
         <Tab.Screen
           name="Home"
-          component={Saved}
+          component={Home}
           options={{
             tabBarIcon: ({ color }) => (
               <Entypo name="home" size={24} color={color} />
