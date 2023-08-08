@@ -1,22 +1,18 @@
-import { View, ScrollView } from 'react-native'
-import { BigImmobileCard } from '../components/layout/big-immobile-card'
+import { View, ScrollView, FlatList } from 'react-native'
 import { SearchInput } from '../components/common/search-input'
-import { Fragment } from 'react'
 
-export const Favorite = () => {
+import { HorizontalCard } from '../components/layout/card'
+import { BlankSpace } from '../components/common/space-white'
+
+export const Saved = () => {
   const id = ['1', '2', '3', '4']
   return (
     <View className="flex-1 pt-7 px-4 bg-base pb-24">
-      <ScrollView
-        className="flex-1"
-        showsVerticalScrollIndicator={false}
-        showsHorizontalScrollIndicator={false}
-      >
-        <SearchInput />
+      <SearchInput />
 
-        <View className="h-7" />
+      <BlankSpace size={30} />
 
-        <View className="items-center justify-center">
+      {/* <View className="items-center justify-center">
           {id.map((item) => (
             <Fragment key={item}>
               <BigImmobileCard
@@ -33,8 +29,15 @@ export const Favorite = () => {
               <View className="h-6" />
             </Fragment>
           ))}
-        </View>
-      </ScrollView>
+        </View> */}
+
+      <FlatList
+        showsVerticalScrollIndicator={false}
+        data={id}
+        renderItem={() => <HorizontalCard />}
+        ItemSeparatorComponent={() => <BlankSpace size={17} />}
+        // disableVirtualization={false}
+      />
     </View>
   )
 }

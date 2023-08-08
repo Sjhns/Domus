@@ -3,7 +3,7 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 import { NavigationContainer } from '@react-navigation/native'
 import { Feather, Entypo } from '@expo/vector-icons'
 import { Profile } from '../../screens/profile'
-import { Favorite } from '../../screens/favorite'
+import { Saved } from '../../screens/saved'
 
 const Tab = createBottomTabNavigator()
 
@@ -44,7 +44,7 @@ export const Navigator = () => {
       >
         <Tab.Screen
           name="Home"
-          component={Favorite}
+          component={Saved}
           options={{
             tabBarIcon: ({ color }) => (
               <Entypo name="home" size={24} color={color} />
@@ -73,7 +73,7 @@ export const Navigator = () => {
 
         <Tab.Screen
           name="Favoritos"
-          component={Favorite}
+          component={Saved}
           options={{
             tabBarIcon: ({ color }) => (
               <Feather name="framer" size={24} color={color} />

@@ -4,7 +4,7 @@ type SpaceProps = {
   size: number
 }
 
-export const SpaceWhite = ({ size }: SpaceProps) => {
+export const BlankSpace = ({ size }: SpaceProps) => {
   return (
     <View
       style={{

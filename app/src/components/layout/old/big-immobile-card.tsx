@@ -1,7 +1,7 @@
 import { Image, View, Text } from 'react-native'
 import { FontAwesome, Ionicons } from '@expo/vector-icons'
-import { ImmobileRoomAndSizeDetails } from '../common/immobile-room-and-size-details'
-import { PriceWithFavoriteButton } from '../common/price-with-favorite-button'
+import { ImmobileRoomAndSizeDetails } from './immobile-room-and-size-details'
+import { PriceWithFavoriteButton } from './price-with-favorite-button'
 
 type BigImmobileCardProps = {
   title: string

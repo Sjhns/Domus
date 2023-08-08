@@ -3,7 +3,7 @@ import { ProfileMenu } from '../components/layout/profile-menu'
 import { Divider } from '../components/common/divisor'
 import { ProfileMenuOption } from '../components/common/profile-menu-option'
 import Ionicons from '@expo/vector-icons/Ionicons'
-import { SpaceWhite } from '../components/common/space-white'
+import { BlankSpace } from '../components/common/space-white'
 import { Avatar } from '../components/common/avatar'
 
 export const Profile = () => {
@@ -30,14 +30,14 @@ export const Profile = () => {
 
         <Divider />
 
-        <SpaceWhite size={20} />
+        <BlankSpace size={20} />
 
         <ProfileMenuOption
           icon={<Ionicons name="toggle" size={22} color="black" />}
           label="Switch to hosting"
         />
 
-        <SpaceWhite size={170} />
+        <BlankSpace size={170} />
       </ScrollView>
     </View>
   )
