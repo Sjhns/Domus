@@ -1,0 +1,39 @@
+{
+  "name": "clear-architecture",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "private": "true",
+  "scripts": {
+    "test": "vitest --run",
+    "start": "node ./dist/main/express/main.js",
+    "coverage": "vitest run --coverage",
+    "lint": "eslint . --ext .ts,.spec.ts,.tsx",
+    "dev": "tsx src/main/express/main.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@rocketseat/eslint-config": "^1.3.0",
+    "@types/express": "^4.17.17",
+    "@types/node": "^18.16.19",
+    "@vitest/coverage-c8": "^0.31.4",
+    "commitizen": "^4.3.0",
+    "eslint": "^8.45.0",
+    "husky": "^8.0.3",
+    "prettier": "^2.8.8",
+    "tsx": "^3.12.7",
+    "typescript": "^5.1.6",
+    "vitest": "^0.30.1"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "fp-ts": "^2.16.0",
+    "module-alias": "^2.2.3",
+    "yup": "^1.2.0"
+  },
+  "_moduleAliases": {
+    "@": "dist"
+  }
+}

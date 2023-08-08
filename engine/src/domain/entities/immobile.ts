@@ -1,63 +1,49 @@
-type Location = {
-  zipCode: string
-  state: string
-  city: string
-  neighborhood: string // Bairro
-  street: string // Logradouro
-  number: string
-}
-
-type Landlord = {
-  name: string
-  email: string
-  phone: string
-  occupation: string
-}
-
 type ImmobileProps = {
   id: string
-  createdAt: string
-  updatedAt: string
-  images: string[]
-  price: number
-  landlord: Landlord
-  location: Location
-  type: string
-  squareMeters: number
-  bedrooms: number
-  bathrooms: number
-  parkingSpaces: number
-  description: string
-  acceptsRoommates: boolean
-  maxRoommates?: number
+  ownerId: string
+  cep: string
+  number: number
+  complement: string
+  rentMoney: number
+  isRent: boolean
+  createdAt: Date
+  updatedAt: Date
 }
 
 export class Immobile {
-  constructor(public props: ImmobileProps) {
-    this.validateProperties()
+  private errors: string[] = []
+
+  private constructor(public readonly props: ImmobileProps) {
+    Object.assign(this, props)
+
+    this.validate()
   }
 
-  validateProperties(): void {
-    const {
-      squareMeters,
-      bedrooms,
-      bathrooms,
-      parkingSpaces,
-      price,
-      acceptsRoommates,
-      maxRoommates,
-    } = this.props
+  public static create(props: ImmobileProps): Immobile {
+    const immobile = new Immobile(props)
+    return immobile
+  }
 
-    const isValid =
-      squareMeters > 0 &&
-      bedrooms > 0 &&
-      bathrooms > 0 &&
-      parkingSpaces >= 0 &&
-      price >= 0 &&
-      (acceptsRoommates ? maxRoommates !== undefined && maxRoommates > 0 : true)
-
-    if (!isValid) {
-      throw new Error('Informações não são válidas')
+  private validate(): void {
+    if (!this.props.cep || !this.props.cep.trim()) {
+      this.errors.push('CEP é obrigatório.')
     }
+    if (!this.props.number || this.props.number <= 0) {
+      this.errors.push(
+        'Número do imóvel é obrigatório e deve ser um valor positivo.',
+      )
+    }
+
+    if (!this.props.isRent) {
+      if (!this.props.rentMoney || this.props.rentMoney <= 0) {
+        this.errors.push(
+          'Valor da renda é obrigatório e deve ser um valor positivo.',
+        )
+      }
+    }
+  }
+
+  get getErrors(): string[] {
+    return this.errors
   }
 }
