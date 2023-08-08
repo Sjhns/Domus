@@ -9,7 +9,7 @@ export const BlankSpace = ({ size }: SpaceProps) => {
     <View
       style={{
         height: size,
-        width: 100,
+        width: size,
       }}
     />
   )
