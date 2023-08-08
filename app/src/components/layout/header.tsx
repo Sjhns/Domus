@@ -1,18 +1,21 @@
-import { Text, View, TouchableOpacity } from 'react-native'
+import { Text, View, Pressable } from 'react-native'
 import { MaterialIcons } from '@expo/vector-icons'
 import { SearchInput } from '../common/search-input'
+import { useState } from 'react'
 
 type HeaderProps = {
   userCurrentLocation: string
 }
 
 export const Header = ({ userCurrentLocation }: HeaderProps) => {
+  const [activeTab, setActiveTab] = useState('rent')
+
   const handleRentPress = () => {
-    console.log('I need to rent pressed')
+    setActiveTab('rent')
   }
 
   const handleBuyPress = () => {
-    console.log('I need to buy pressed')
+    setActiveTab('buy')
   }
 
   return (
@@ -46,26 +49,35 @@ export const Header = ({ userCurrentLocation }: HeaderProps) => {
           overflow-hidden px-2 py-[5px] rounded-full flex-row items-center 
           justify-between space-x-1"
         >
-          <TouchableOpacity
+          <Pressable
             onPress={handleRentPress}
-            className="bg-[#6246EA] shadow-lg h-full flex-1 rounded-full items-center
-            justify-center
-          "
+            className={`${
+              activeTab === 'rent' ? 'bg-[#6246EA]' : 'bg-transparent'
+            } shadow-lg h-full flex-1 rounded-full items-center justify-center`}
           >
-            <Text className="text-[#FDFDFD] tracking-widest font-medium text-base">
+            <Text
+              className={`${
+                activeTab === 'rent' ? 'text-[#FDFDFD]' : 'text-[#7D7F88]'
+              } tracking-widest font-medium text-base`}
+            >
               I need to rent
             </Text>
-          </TouchableOpacity>
+          </Pressable>
 
-          <TouchableOpacity
+          <Pressable
             onPress={handleBuyPress}
-            className="bg-transparent h-full flex-1 rounded-full 
-            items-center justify-center"
+            className={`${
+              activeTab === 'buy' ? 'bg-[#6246EA]' : 'bg-transparent'
+            } h-full flex-1 rounded-full items-center justify-center`}
           >
-            <Text className="text-[#7D7F88] tracking-tighter text-base">
+            <Text
+              className={`${
+                activeTab === 'buy' ? 'text-[#FDFDFD]' : 'text-[#7D7F88]'
+              } tracking-widest font-medium text-base`}
+            >
               I need to buy
             </Text>
-          </TouchableOpacity>
+          </Pressable>
         </View>
       </View>
     </View>
