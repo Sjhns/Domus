@@ -9,7 +9,7 @@ export const Saved = () => {
 
   return (
     <View className="flex-1 pt-7 px-3 bg-base pb-24">
-      <SearchInput />
+      <SearchInput placeholder="Pesquisar propriedades salvas" />
 
       <BlankSpace size={15} />
 

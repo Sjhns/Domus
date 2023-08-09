@@ -36,7 +36,7 @@ export const Header = ({ userCurrentLocation }: HeaderProps) => {
       </View>
 
       <View>
-        <SearchInput />
+        <SearchInput placeholder="Pesquise endereço, cidade" />
       </View>
 
       <View className="space-y-2">

@@ -9,11 +9,11 @@ const url =
 export const Explore = () => {
   const id = [1, 2, 3, 4, 5]
   return (
-    <View className="flex-1 px-3 pt-6 bg-base pb-24">
+    <View className="flex-1 px-3 pt-7 bg-base pb-24">
       <ScrollView showsVerticalScrollIndicator={false}>
-        <SearchInput placeholder="Pesquise endereço, cidade, localização..." />
+        <SearchInput placeholder="Pesquise endereço, cidade, localização" />
 
-        <BlankSpace size={28} />
+        <BlankSpace size={23} />
 
         <Text className="text-[#1A1E25] tracking-[0.234px] font-semibold text-lg">
           Encontre aqui sua próxima viagem

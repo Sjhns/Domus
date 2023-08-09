@@ -8,7 +8,7 @@ export const ChatScreen = () => {
   return (
     <View className="flex-1 px-3 pt-8 bg-base pb-24">
       <ScrollView showsVerticalScrollIndicator={false}>
-        <SearchInput />
+        <SearchInput placeholder="Pesquise suas mensagens" />
 
         <BlankSpace size={28} />
 
