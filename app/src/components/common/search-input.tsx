@@ -1,7 +1,10 @@
 import { TextInput, View } from 'react-native'
 import { Ionicons } from '@expo/vector-icons'
 
-export const SearchInput = () => {
+type SearchInputProps = {
+  placeholder?: string
+}
+export const SearchInput = ({ placeholder }: SearchInputProps) => {
   return (
     <View
       className={`rounded-full border-[.8px] 
@@ -10,7 +13,7 @@ export const SearchInput = () => {
     >
       <Ionicons name="search-outline" size={24} color={'#1A1E25'} />
       <TextInput
-        placeholder="Search address, city, location..."
+        placeholder={placeholder}
         className="text-[#3a3b40] flex-1 h-full px-1 bg-transparent 
         outline-none text-[17px]"
       />
