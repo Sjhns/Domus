@@ -4,7 +4,7 @@ import { FontAwesome, Ionicons } from '@expo/vector-icons'
 import { ReactElement, useState } from 'react'
 import { Image } from '../common/image'
 
-type ImmobileCardProps = {
+type HorizontalCardProps = {
   title: string
   location: string
   price: number
@@ -12,6 +12,7 @@ type ImmobileCardProps = {
   rooms: number
   squareMeters: number
   period: string
+  saved: boolean
 }
 
 type HorizontalCardHeaderProps = {
@@ -40,8 +41,8 @@ const HorizontalCardFooter = ({ children }: HorizontalCardFooterProps) => {
 
 const StyledView = styled(View)
 
-export const HorizontalCard = () => {
-  const [isFavorite, setIsFavorite] = useState(true)
+export const HorizontalCard = ({ saved }: { saved: boolean }) => {
+  const [isFavorite, setIsFavorite] = useState(saved)
 
   const toggleFavorite = () => {
     setIsFavorite(!isFavorite)
@@ -51,9 +52,6 @@ export const HorizontalCard = () => {
     <StyledView
       className="h-48 w-[360] bg-white rounded-md overflow-hidden flex-row shadow-lg 
     border border-[#a4a1a13f]"
-      style={{
-        display: isFavorite ? 'flex' : 'none',
-      }}
     >
       <HorizontalCardHeader>
         <Image source="https://www.lopes.com.br/blog/wp-content/uploads/2017/06/interior-2400372_1920.jpg" />

@@ -16,8 +16,7 @@ export const Saved = () => {
       <FlatList
         showsVerticalScrollIndicator={false}
         data={id}
-        renderItem={() => <HorizontalCard />}
-        className="last:mb-20"
+        renderItem={() => <HorizontalCard saved={true} />}
         ItemSeparatorComponent={() => <BlankSpace size={10} />}
       />
     </View>

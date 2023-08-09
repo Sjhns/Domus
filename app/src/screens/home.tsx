@@ -24,7 +24,7 @@ export const Home = () => {
           showsHorizontalScrollIndicator={false}
           data={id}
           ItemSeparatorComponent={() => <BlankSpace size={15} />}
-          renderItem={() => <HorizontalCard />}
+          renderItem={() => <HorizontalCard saved={false} />}
         ></FlatList>
 
         <BlankSpace size={30} />
@@ -35,7 +35,7 @@ export const Home = () => {
           showsHorizontalScrollIndicator={false}
           data={id}
           ItemSeparatorComponent={() => <BlankSpace size={15} />}
-          renderItem={() => <HorizontalCard />}
+          renderItem={() => <HorizontalCard saved={false} />}
         ></FlatList>
 
         <BlankSpace size={30} />
@@ -46,7 +46,7 @@ export const Home = () => {
           showsHorizontalScrollIndicator={false}
           data={id}
           ItemSeparatorComponent={() => <BlankSpace size={15} />}
-          renderItem={() => <HorizontalCard />}
+          renderItem={() => <HorizontalCard saved={false} />}
         ></FlatList>
 
         <BlankSpace size={30} />
