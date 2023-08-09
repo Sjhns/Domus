@@ -6,7 +6,7 @@ export const SearchInput = () => {
     <View
       className={`rounded-full border-[.8px] 
     border-[#E3E3E7] h-[53px] overflow-hidden  flex-row items-center 
-    justify-between px-4 bg-[#F2F2F3] focus:bg-transparent`}
+    justify-between px-4 bg-[#F2F2F3]`}
     >
       <Ionicons name="search-outline" size={24} color={'#1A1E25'} />
       <TextInput

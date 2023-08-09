@@ -9,7 +9,7 @@ import { PresentationCard } from '../components/common/presentation-card'
 export const Home = () => {
   const id = [1, 2, 3, 4, 5, 6, 7, 8]
   return (
-    <View className="flex-1 px-4 pb-24 bg-base">
+    <View className="flex-1 px-3 pb-24 bg-base">
       <ScrollView
         showsVerticalScrollIndicator={false}
         showsHorizontalScrollIndicator={false}

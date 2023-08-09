@@ -8,7 +8,7 @@ import { Avatar } from '../components/common/avatar'
 
 export const Profile = () => {
   return (
-    <View className="flex-1 pt-12 px-4 bg-base">
+    <View className="flex-1 pt-12 px-3 bg-base">
       <ScrollView
         className="flex-1"
         showsVerticalScrollIndicator={false}

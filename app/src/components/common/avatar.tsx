@@ -9,8 +9,8 @@ export const Avatar = ({ size, src }: AvatarProps) => {
   return (
     <Image
       style={{
-        width: size === 'lg' ? 144 : 110,
-        height: size === 'lg' ? 144 : 110,
+        width: size === 'lg' ? 144 : size === 'md' ? 110 : 52,
+        height: size === 'lg' ? 144 : size === 'md' ? 110 : 52,
       }}
       className="rounded-full object-cover object-center"
       source={{

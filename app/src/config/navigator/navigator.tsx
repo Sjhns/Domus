@@ -5,6 +5,7 @@ import { Feather, Entypo } from '@expo/vector-icons'
 import { Profile } from '../../screens/profile'
 import { Saved } from '../../screens/saved'
 import { Home } from '../../screens/home'
+import { ChatScreen } from '../../screens/chat'
 
 const Tab = createBottomTabNavigator()
 
@@ -52,22 +53,23 @@ export const Navigator = () => {
             ),
           }}
         />
+
         <Tab.Screen
-          name="Profile"
+          name="Explorar"
           component={Profile}
           options={{
             tabBarIcon: ({ color }) => (
-              <Entypo name="user" size={24} color={color} />
+              <Entypo name="basecamp" size={24} color={color} />
             ),
           }}
         />
 
         <Tab.Screen
-          name="Search"
-          component={Profile}
+          name="Chat"
+          component={ChatScreen}
           options={{
             tabBarIcon: ({ color }) => (
-              <Feather name="search" size={24} color={color} />
+              <Entypo name="chat" size={24} color={color} />
             ),
           }}
         />
@@ -77,17 +79,17 @@ export const Navigator = () => {
           component={Saved}
           options={{
             tabBarIcon: ({ color }) => (
-              <Feather name="framer" size={24} color={color} />
+              <Feather name="heart" size={24} color={color} />
             ),
           }}
         />
 
         <Tab.Screen
-          name="Config"
+          name="Profile"
           component={Profile}
           options={{
             tabBarIcon: ({ color }) => (
-              <Feather name="more-vertical" size={24} color={color} />
+              <Entypo name="user" size={24} color={color} />
             ),
           }}
         />

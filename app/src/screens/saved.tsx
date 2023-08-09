@@ -8,7 +8,7 @@ export const Saved = () => {
   const id = ['1', '2', '3', '4']
 
   return (
-    <View className="flex-1 pt-7 px-4 bg-base pb-24">
+    <View className="flex-1 pt-7 px-3 bg-base pb-24">
       <SearchInput />
 
       <BlankSpace size={15} />
