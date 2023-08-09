@@ -1,4 +1,5 @@
-import { View, Text, Image, TouchableOpacity } from "react-native";
+import { View, Text, Pressable } from 'react-native'
+import { Image } from './imagem'
 
 export const PresentationCard = () => (
   <View className="mt-5 flex-row overflow-hidden rounded-xl shadow-md border-[.8px] border-[#0f0f0f42]">
@@ -11,23 +12,18 @@ export const PresentationCard = () => (
         Ganhe renda passiva alugando ou vendendo suas propriedades!
       </Text>
 
-      <TouchableOpacity
+      <Pressable
         className="bg-[#FFF] mt-auto w-[180px] px-2 py-3 justify-between 
       items-center shadow-lg rounded-[30px] overflow-hidden"
       >
         <Text className="font-semibold text-[#6246EA] text-center text-[14px]">
           Torne-se um anfitrião
         </Text>
-      </TouchableOpacity>
+      </Pressable>
     </View>
 
     <View className="w-[110px] h-[220px]">
-      <Image
-        source={{
-          uri: "https://www.jamesedition.com/stories/wp-content/uploads/2021/01/9.jpg",
-        }}
-        className="w-full h-full object-cover"
-      />
+      <Image source="https://www.jamesedition.com/stories/wp-content/uploads/2021/01/9.jpg" />
     </View>
   </View>
-);
+)

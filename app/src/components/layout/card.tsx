@@ -2,6 +2,7 @@ import { View, Image as ImageNative, Text, Pressable } from 'react-native'
 import { styled } from 'nativewind'
 import { FontAwesome, Ionicons } from '@expo/vector-icons'
 import { ReactElement, useState } from 'react'
+import { Image } from '../common/imagem'
 
 type ImmobileCardProps = {
   title: string
@@ -11,17 +12,6 @@ type ImmobileCardProps = {
   rooms: number
   squareMeters: number
   period: string
-}
-
-const Image = ({ source }: { source: string }) => {
-  return (
-    <ImageNative
-      source={{
-        uri: source,
-      }}
-      className="w-full h-full object-cover object-center"
-    />
-  )
 }
 
 type HorizontalCardHeaderProps = {
