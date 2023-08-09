@@ -2,7 +2,7 @@ import { View, Image as ImageNative, Text, Pressable } from 'react-native'
 import { styled } from 'nativewind'
 import { FontAwesome, Ionicons } from '@expo/vector-icons'
 import { ReactElement, useState } from 'react'
-import { Image } from '../common/imagem'
+import { Image } from '../common/image'
 
 type ImmobileCardProps = {
   title: string

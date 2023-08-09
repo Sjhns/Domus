@@ -1,5 +1,5 @@
 import { View, Text, Pressable } from 'react-native'
-import { Image } from './imagem'
+import { Image } from './image'
 
 export const PresentationCard = () => (
   <View className="mt-5 flex-row overflow-hidden rounded-xl shadow-md border-[.8px] border-[#0f0f0f42]">

@@ -1,6 +1,6 @@
 import { Text, View, Pressable, FlatList } from 'react-native'
 import { Ionicons } from '@expo/vector-icons'
-import { Image } from '../common/imagem'
+import { Image } from '../common/image'
 import { Title } from '../common/title'
 import { BlankSpace } from '../common/space-white'
 
