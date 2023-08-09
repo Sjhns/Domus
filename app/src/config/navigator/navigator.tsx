@@ -6,6 +6,7 @@ import { Profile } from '../../screens/profile'
 import { Saved } from '../../screens/saved'
 import { Home } from '../../screens/home'
 import { ChatScreen } from '../../screens/chat'
+import { Explore } from '../../screens/explore'
 
 const Tab = createBottomTabNavigator()
 
@@ -56,7 +57,7 @@ export const Navigator = () => {
 
         <Tab.Screen
           name="Explorar"
-          component={Profile}
+          component={Explore}
           options={{
             tabBarIcon: ({ color }) => (
               <Entypo name="basecamp" size={24} color={color} />
