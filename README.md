@@ -44,4 +44,7 @@ Aproveite a oportunidade de descobrir imóveis incríveis e experimentar o futur
 
 Veja abaixo algumas capturas de tela do aplicativo para ter um vislumbre de nossa plataforma:
 
+[domus-app-demo.webm](https://github.com/Sjhns/Domus/assets/108435026/a00be456-1e7e-4993-8091-5f2e37423c57)
+
+
 Obrigado por escolher nossa plataforma de aluguel de imóveis. Estamos ansiosos para ajudá-lo a encontrar o lugar perfeito!
