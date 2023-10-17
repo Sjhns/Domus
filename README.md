@@ -46,5 +46,13 @@ Veja abaixo algumas capturas de tela do aplicativo para ter um vislumbre de noss
 
 [domus-app-demo.webm](https://github.com/Sjhns/Domus/assets/108435026/a00be456-1e7e-4993-8091-5f2e37423c57)
 
+------------
+
+![Screenshot_1689463024](https://github.com/Sjhns/Domus/assets/108435026/eed7e318-3c52-4322-944a-ea9299981e35)
+![Screenshot_1697551000](https://github.com/Sjhns/Domus/assets/108435026/bd241516-be5a-4cb8-85cf-7b20738f524e)
+![Screenshot_1697551006](https://github.com/Sjhns/Domus/assets/108435026/40ee4abd-0bc6-4d24-ab78-642b0519de17)
+![Screenshot_1697551009](https://github.com/Sjhns/Domus/assets/108435026/34467b83-f365-4a17-9330-a1af4d3b3988)
+![Screenshot_1697551022](https://github.com/Sjhns/Domus/assets/108435026/420ed163-cde3-425c-9941-b359820904ac)
+![Screenshot_1697551029](https://github.com/Sjhns/Domus/assets/108435026/dbe012db-b45a-47cb-82aa-80e49d63deaf)
 
 Obrigado por escolher nossa plataforma de aluguel de imóveis. Estamos ansiosos para ajudá-lo a encontrar o lugar perfeito!
