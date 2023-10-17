@@ -44,7 +44,10 @@ Aproveite a oportunidade de descobrir imóveis incríveis e experimentar o futur
 
 Veja abaixo algumas capturas de tela do aplicativo para ter um vislumbre de nossa plataforma:
 
-[domus-app-demo.webm](https://github.com/Sjhns/Domus/assets/108435026/a00be456-1e7e-4993-8091-5f2e37423c57)
+
+
+https://github.com/Sjhns/Domus/assets/108435026/413d1480-e30b-4e03-9d1b-f90e2828181a
+
 
 ------------
 
