@@ -51,11 +51,20 @@ https://github.com/Sjhns/Domus/assets/108435026/413d1480-e30b-4e03-9d1b-f90e2828
 
 ------------
 
-![Screenshot_1689463024](https://github.com/Sjhns/Domus/assets/108435026/eed7e318-3c52-4322-944a-ea9299981e35)
-![Screenshot_1697551000](https://github.com/Sjhns/Domus/assets/108435026/bd241516-be5a-4cb8-85cf-7b20738f524e)
-![Screenshot_1697551006](https://github.com/Sjhns/Domus/assets/108435026/40ee4abd-0bc6-4d24-ab78-642b0519de17)
-![Screenshot_1697551009](https://github.com/Sjhns/Domus/assets/108435026/34467b83-f365-4a17-9330-a1af4d3b3988)
-![Screenshot_1697551022](https://github.com/Sjhns/Domus/assets/108435026/420ed163-cde3-425c-9941-b359820904ac)
-![Screenshot_1697551029](https://github.com/Sjhns/Domus/assets/108435026/dbe012db-b45a-47cb-82aa-80e49d63deaf)
+![Screenshot_1686796316](https://github.com/Sjhns/Domus/assets/108435026/e728272e-b520-4e0b-9133-83efe72b0dcd)
+
+![Screenshot_1689463024](https://github.com/Sjhns/Domus/assets/108435026/1aec9624-f0ad-45e1-917f-81a0253a2c45)
+
+![Screenshot_1697551002](https://github.com/Sjhns/Domus/assets/108435026/848e5f8c-b814-4f7e-b5ce-477d8ffe8a8b)
+
+![Screenshot_1697551006](https://github.com/Sjhns/Domus/assets/108435026/e84282e3-da02-46c9-ae7d-f255f249af99)
+
+![Screenshot_1697551009](https://github.com/Sjhns/Domus/assets/108435026/d98205cf-72d0-4dbb-a7c0-cc6fe2234d9a)
+
+![Screenshot_1697551022](https://github.com/Sjhns/Domus/assets/108435026/adef1fae-bd90-40d6-9256-849a9657e83c)
+
+![Screenshot_1697551029](https://github.com/Sjhns/Domus/assets/108435026/b94b2199-31d9-4509-8890-83ac8b8857e2)
+
+
 
 Obrigado por escolher nossa plataforma de aluguel de imóveis. Estamos ansiosos para ajudá-lo a encontrar o lugar perfeito!
